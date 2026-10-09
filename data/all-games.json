@@ -113,9 +113,9 @@
    ]
   },
   {
-   "title": "Animal Crossing (GAMECUBE)",
-   "play_url": "https://gn-math.dev/?id=828",
-   "repo_url": null,
+   "title": "Animal Crossing",
+   "play_url": "https://retrogamescenter.ru/ports/ac-webport-main/index.html",
+   "repo_url": "https://github.com/web-ports/ac-gamecube",
    "lists": [
     "ultimate-474"
    ]
@@ -313,25 +313,25 @@
    ]
   },
   {
-   "title": "Bendy and The Ink Machine (4)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/bendy-and-the-ink-machine",
+   "title": "Bendy and The Ink Machine",
+   "play_url": "https://gn-math.github.io/web-port/bendy/",
+   "repo_url": "https://github.com/genizy/web-port/tree/main/bendy",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Bendy and The Ink Machine (4)",
+   "title": "Bendy and The Ink Machine (2)",
    "play_url": null,
-   "repo_url": "https://github.com/web-ports/bendy-and-the-ink-machine",
+   "repo_url": "https://github.com/slqntdevss/BATIMFullPort",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Bendy and The Ink Machine (4)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/bendy-and-the-ink-machine",
+   "title": "Bendy and The Ink Machine (3)",
+   "play_url": "https://gn-math.github.io/web-port/bendy/",
+   "repo_url": "https://github.com/genizy/web-port/tree/main/bendy",
    "lists": [
     "ultimate-474"
    ]
@@ -449,17 +449,17 @@
    ]
   },
   {
-   "title": "Brotato (3)",
-   "play_url": null,
-   "repo_url": "https://github.com/wowdabug/s1/tree/main/brotato",
+   "title": "Brotato",
+   "play_url": "https://gn-math.dev/?id=723",
+   "repo_url": "https://github.com/BlueGameMC/BrotatoWeb",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Brotato (3)",
+   "title": "Brotato (2)",
    "play_url": null,
-   "repo_url": "https://github.com/wowdabug/s1/tree/main/brotato",
+   "repo_url": "https://github.com/gays-studio/brotato-webport/",
    "lists": [
     "ultimate-474"
    ]
@@ -561,9 +561,9 @@
    ]
   },
   {
-   "title": "Celeste (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/celeste",
+   "title": "Celeste",
+   "play_url": "https://gn-math.dev/?id=623",
+   "repo_url": "https://github.com/MercuryWorkshop/celeste-wasm",
    "lists": [
     "ultimate-474"
    ]
@@ -673,9 +673,9 @@
    ]
   },
   {
-   "title": "Counter Strike & Half Life (2)",
+   "title": "Counter Strike & Half Life",
    "play_url": null,
-   "repo_url": "https://github.com/Pixelsuft/hl",
+   "repo_url": "https://github.com/yohimik/webxash3d-fwgs",
    "lists": [
     "ultimate-474"
    ]
@@ -713,9 +713,9 @@
    ]
   },
   {
-   "title": "Cruelty Squad (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/cruelty-squad",
+   "title": "Cruelty Squad",
+   "play_url": "https://gn-math.dev/?id=825",
+   "repo_url": "https://github.com/imt00dizzy/cruelty-squad",
    "lists": [
     "ultimate-474"
    ]
@@ -729,9 +729,9 @@
    ]
   },
   {
-   "title": "Cuphead (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/woahhcrackers/CupheadWeb",
+   "title": "Cuphead",
+   "play_url": "https://gn-math.github.io/web-port/cuphead/",
+   "repo_url": "https://github.com/genizy/web-port/tree/main/cuphead",
    "lists": [
     "ultimate-474"
    ]
@@ -937,9 +937,9 @@
    ]
   },
   {
-   "title": "Duck Life Adventure (2)",
+   "title": "Duck Life Adventure",
    "play_url": null,
-   "repo_url": "https://github.com/web-ports/duck-8",
+   "repo_url": "https://github.com/aukak/duck-life-adventure",
    "lists": [
     "ultimate-474"
    ]
@@ -1417,9 +1417,9 @@
    ]
   },
   {
-   "title": "Gabriel's Awesome Schoolhouse (GASH)",
-   "play_url": "https://gn-math.dev/?id=784",
-   "repo_url": null,
+   "title": "Gabriel's Awesome Schoolhouse",
+   "play_url": null,
+   "repo_url": "https://github.com/web-ports/gash",
    "lists": [
     "ultimate-474"
    ]
@@ -1497,9 +1497,9 @@
    ]
   },
   {
-   "title": "Gorilla Tag (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/aukak/gorrila-tag",
+   "title": "Gorilla Tag",
+   "play_url": "https://gn-math.dev/?id=668",
+   "repo_url": "https://github.com/web-ports/gorilla-tag",
    "lists": [
     "ultimate-474"
    ]
@@ -1513,17 +1513,17 @@
    ]
   },
   {
-   "title": "Granny (3)",
-   "play_url": null,
-   "repo_url": "https://github.com/woahhcrackers/GrannyWeb",
+   "title": "Granny",
+   "play_url": "https://gn-math.dev/?id=90",
+   "repo_url": "https://github.com/web-ports/granny",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Granny (3)",
+   "title": "Granny (2)",
    "play_url": null,
-   "repo_url": "https://github.com/woahhcrackers/GrannyWeb",
+   "repo_url": "https://github.com/aukak/Granny",
    "lists": [
     "ultimate-474"
    ]
@@ -1675,9 +1675,9 @@
    ]
   },
   {
-   "title": "Hollow Knight: Silksong (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/webporting/Hollow-Knight-Silksong",
+   "title": "Hollow Knight: Silksong",
+   "play_url": "https://gn-math.dev/?id=771",
+   "repo_url": "https://github.com/web-ports/hollow-knight-silksong",
    "lists": [
     "ultimate-474"
    ]
@@ -1852,9 +1852,9 @@
    ]
   },
   {
-   "title": "Karlson (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/thecheetoman/KarlsonWebPort",
+   "title": "Karlson",
+   "play_url": "https://gn-math.github.io/web-port/karlson/",
+   "repo_url": "https://github.com/genizy/web-port/tree/main/karlson",
    "lists": [
     "ultimate-474"
    ]
@@ -1940,9 +1940,9 @@
    ]
   },
   {
-   "title": "La Madriguera (Lazy Bear Game)",
-   "play_url": "https://gn-math.dev/?id=843",
-   "repo_url": null,
+   "title": "La Madriguera",
+   "play_url": null,
+   "repo_url": "https://github.com/web-ports/la-madriguera",
    "lists": [
     "ultimate-474"
    ]
@@ -2148,9 +2148,9 @@
    ]
   },
   {
-   "title": "MiSide (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/woahhcrackers/MiSideWeb",
+   "title": "MiSide",
+   "play_url": "https://gn-math.dev/?id=814",
+   "repo_url": "https://github.com/web-ports/miside/",
    "lists": [
     "ultimate-474"
    ]
@@ -2188,9 +2188,9 @@
    ]
   },
   {
-   "title": "My Femboy Roommate (2)",
+   "title": "My Femboy Roommate",
    "play_url": null,
-   "repo_url": "https://github.com/Cute-Orange-Cat/MFR/tree/main",
+   "repo_url": "http://github.com/gays-studio/mfr-webport",
    "lists": [
     "ultimate-474"
    ]
@@ -2268,9 +2268,9 @@
    ]
   },
   {
-   "title": "Nothing (2)",
+   "title": "Nothing",
    "play_url": null,
-   "repo_url": "https://github.com/googoogoob/NothingWebPort",
+   "repo_url": "https://github.com/gays-studio/nothing-wasm-web",
    "lists": [
     "ultimate-474"
    ]
@@ -2476,17 +2476,17 @@
    ]
   },
   {
-   "title": "Plants vs Zombies: GOTY Edition (3)",
-   "play_url": null,
-   "repo_url": "https://github.com/ajtabjs/pvzdeploy",
+   "title": "Plants vs Zombies: GOTY Edition",
+   "play_url": "https://gn-math.dev/?id=842",
+   "repo_url": "https://github.com/wszqkzqk/PvZ-Portable",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Plants vs Zombies: GOTY Edition (3)",
+   "title": "Plants vs Zombies: GOTY Edition (2)",
    "play_url": null,
-   "repo_url": "https://github.com/ajtabjs/pvzdeploy",
+   "repo_url": "https://github.com/web-ports/pvz",
    "lists": [
     "ultimate-474"
    ]
@@ -2932,9 +2932,9 @@
    ]
   },
   {
-   "title": "Slime Ranchers (2)",
+   "title": "Slime Ranchers",
    "play_url": null,
-   "repo_url": "https://github.com/Reeyuki/SlimeRanch",
+   "repo_url": "https://github.com/web-ports/slime-ranchers",
    "lists": [
     "ultimate-474"
    ]
@@ -2972,9 +2972,9 @@
    ]
   },
   {
-   "title": "Something (2)",
+   "title": "Something",
    "play_url": null,
-   "repo_url": "https://github.com/googoogoob/SomethingWebPort",
+   "repo_url": "https://github.com/gays-studio/something-web",
    "lists": [
     "ultimate-474"
    ]
@@ -3012,9 +3012,9 @@
    ]
   },
   {
-   "title": "Sonic Robo Blast 2 (2)",
+   "title": "Sonic Robo Blast 2",
    "play_url": null,
-   "repo_url": "https://github.com/web-ports/srb2",
+   "repo_url": "https://github.com/chromaticpipe/SRB2-WASM",
    "lists": [
     "ultimate-474"
    ]
@@ -3044,9 +3044,9 @@
    ]
   },
   {
-   "title": "Sonic.EXE (ORIGINAL)",
-   "play_url": "https://gn-math.dev/?id=606",
-   "repo_url": null,
+   "title": "SONIC.EXE",
+   "play_url": "https://gn-math.github.io/web-port/sonic.exe/",
+   "repo_url": "https://github.com/genizy/web-port/tree/main/sonic.exe",
    "lists": [
     "ultimate-474"
    ]
@@ -3300,9 +3300,9 @@
    ]
   },
   {
-   "title": "Terraria (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/terraria",
+   "title": "Terraria",
+   "play_url": "https://gn-math.dev/?id=669",
+   "repo_url": "http://github.com/mercuryWorkshop/terraria-wasm",
    "lists": [
     "ultimate-474"
    ]
@@ -3396,17 +3396,17 @@
    ]
   },
   {
-   "title": "Totally Accurate Battle Simulator (TABS)",
-   "play_url": "https://gn-math.dev/?id=827",
-   "repo_url": null,
+   "title": "Totally Accurate Battle Simulator",
+   "play_url": null,
+   "repo_url": "https://github.com/web-ports/tabs",
    "lists": [
     "ultimate-474"
    ]
   },
   {
-   "title": "Totally Accurate Battle Simulator (TABS)",
-   "play_url": "https://gn-math.dev/?id=827",
-   "repo_url": null,
+   "title": "Totally Accurate Battle Simulator (2)",
+   "play_url": null,
+   "repo_url": "https://github.com/Reeyuki/Tabs",
    "lists": [
     "ultimate-474"
    ]
@@ -3516,9 +3516,9 @@
    ]
   },
   {
-   "title": "Untitled Goose Game (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/webporting/Untitled-Goose-Game",
+   "title": "Untitled Goose Game",
+   "play_url": "https://gn-math.dev/?id=718",
+   "repo_url": "https://github.com/web-ports/untitled-goose-game",
    "lists": [
     "ultimate-474"
    ]
@@ -3636,9 +3636,9 @@
    ]
   },
   {
-   "title": "Who's Your Daddy? (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/daddygame",
+   "title": "Who's Your Daddy?",
+   "play_url": "https://gn-math.dev/?id=791",
+   "repo_url": "https://github.com/Reeyuki/daddygame",
    "lists": [
     "ultimate-474"
    ]
@@ -3772,9 +3772,9 @@
    ]
   },
   {
-   "title": "Your Only Move is Hustle (2)",
-   "play_url": null,
-   "repo_url": "https://github.com/web-ports/yomi-hustle",
+   "title": "Your Only Move is Hustle",
+   "play_url": "https://gn-math.dev/?id=776",
+   "repo_url": "https://github.com/webporting/Your-Only-Move-Is-HUSTLE",
    "lists": [
     "ultimate-474"
    ]

@@ -6,7 +6,7 @@ Play full PC games in your browser. No installs, no streaming — click a link a
 
 ## Every game — one unified list
 
-`data/all-games.json` merges **every game from every tracked list** (currently 483: the 474-game Ultimate Catalog + our own finds, deduped) with Play/Source links and which list each came from. The webpage shows it as a searchable table. `/scrapgames` keeps it updated.
+`data/all-games.json` merges **every game from every tracked list** (483 unique games: the 474-game Ultimate Catalog + our own finds, deduped, with Play/Source links and which list each came from). The webpage shows them all as one searchable list (curated cards with pictures first, everything else A–Z after). `/scrapgames` keeps it updated.
 
 ## How to play
 
