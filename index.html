@@ -40,6 +40,13 @@
   section.lists span { color:var(--muted); font-size:12px; display:block; }
   footer { text-align:center; color:var(--muted); font-size:12px; padding:0 20px 30px; }
   footer a { color:var(--acc); }
+  section.all { max-width:1200px; margin:0 auto; padding:0 20px 40px; }
+  section.all h2 { font-size:20px; }
+  table.all { width:100%; border-collapse:collapse; font-size:14px; }
+  table.all th, table.all td { text-align:left; padding:8px 10px; border-bottom:1px solid #262a35; }
+  table.all th { color:var(--muted); font-size:12px; text-transform:uppercase; }
+  table.all a { color:var(--acc); text-decoration:none; }
+  table.all td.mut { color:var(--muted); }
 </style>
 </head>
 <body>
@@ -64,13 +71,19 @@
 <div class="count" id="count"></div>
 <div class="grid" id="grid"></div>
 
+<section class="all">
+  <h2>🗂 Every game — unified list</h2>
+  <p class="count" id="allcount">Loading…</p>
+  <table class="all"><thead><tr><th>Game</th><th>Play</th><th>Source</th><th>Found in</th></tr></thead><tbody id="allbody"></tbody></table>
+</section>
+
 <section class="lists">
   <h2>📚 Game lists</h2>
   <ul id="lists"></ul>
 </section>
 
 <footer>
-  Images: Steam store capsules via Steam CDN belong to their publishers; placeholders where unavailable.<br>
+  Images: Steam capsules (Valve/Steam CDN), GOG artwork and Wikipedia/Wikimedia covers belong to their publishers.<br>
   Game files usually not included — bring your own copy. Full data: <a href="https://github.com/cyberbuddhy/WebGamePorts">github.com/cyberbuddhy/WebGamePorts</a>
 </footer>
 
@@ -83,31 +96,31 @@ function ph(t){ // SVG placeholder with game initial
 }
 // st: play = click & play, self = host it yourself, off = offline
 const GAMES = [
- {t:"GTA V",st:"off",img:null,play:null,playText:"Offline since Oct 2026",src:"https://github.com/shadany7824/playgta5",srcText:"Archive"},
+ {t:"GTA V",st:"off",img:271590,play:null,playText:"Offline since Oct 2026",src:"https://github.com/shadany7824/playgta5",srcText:"Archive"},
  {t:"Half-Life 2 + Episodes",st:"play",img:220,play:"https://hl2.slqnt.dev",src:"https://www.slqnt.dev/blog/hl2-in-web",srcText:"How it was ported"},
  {t:"GTA: Vice City",st:"play",img:12110,play:"https://revc.wasm.ltd",src:"https://github.com/origami-ltd/wasm-revc",srcText:"Source"},
  {t:"Portal",st:"self",img:400,play:null,playText:"Via weliveinhell port",src:null,srcText:"weliveinhell port"},
- {t:"The Simpsons: Hit & Run",st:"play",img:null,play:"https://shar-wasm.cjoseph.workers.dev/?skipmovie=",src:"https://news.ycombinator.com/item?id=47783061",srcText:"Discussion"},
+ {t:"The Simpsons: Hit & Run",st:"play",pic:"https://upload.wikimedia.org/wikipedia/en/5/5f/The_Simpsons_Hit_and_Run_cover.png",play:"https://shar-wasm.cjoseph.workers.dev/?skipmovie=",src:"https://news.ycombinator.com/item?id=47783061",srcText:"Discussion"},
  {t:"Counter-Strike 1.6",st:"play",img:10,play:"https://dos.zone/mp/?lobby=cs16",src:null,srcText:"Xash3D engine"},
  {t:"Half-Life 1",st:"play",img:70,play:"https://x8bitrain.github.io/webXash/",src:null,srcText:"Xash3D engine"},
  {t:"Doom 3",st:"play",img:9050,h:1,play:"https://wasm.continuation-labs.com/d3demo/",src:"https://github.com/web-ports/doom-3",srcText:"Source"},
  {t:"Quake 3 Arena",st:"play",img:2200,play:"https://thelongestyard.link/q3a-demo/",src:"https://github.com/JWally/web-quaker",srcText:"Multiplayer fork"},
  {t:"Unreal Tournament",st:"play",img:13240,play:"https://dos.zone/mp/?lobby=ut",src:null,srcText:"dos.zone build"},
  {t:"Morrowind",st:"play",img:22320,play:"https://morrowind.virtastic.app",src:"https://github.com/Virtastic/openmw-web",srcText:"Source"},
- {t:"Diablo 1",st:"play",img:null,play:"https://devilutionx.app",src:"https://github.com/diasurgical/devilutionX",srcText:"Source"},
- {t:"Tomb Raider 1",st:"play",img:null,play:"http://xproger.info/projects/OpenLara/",src:"https://github.com/XProger/OpenLara",srcText:"Source"},
+ {t:"Diablo 1",st:"play",pic:"https://images.gog-statics.com/2a351ec2315d2b082c120a1499434480758e56603d2cf21a93e544300c0f3829.jpg",play:"https://devilutionx.app",src:"https://github.com/diasurgical/devilutionX",srcText:"Source"},
+ {t:"Tomb Raider 1",st:"play",pic:"https://upload.wikimedia.org/wikipedia/en/6/69/Tomb_Raider_%281996%29.png",play:"http://xproger.info/projects/OpenLara/",src:"https://github.com/XProger/OpenLara",srcText:"Source"},
  {t:"Duke Nukem 3D",st:"play",img:434050,play:"https://gawen.me/webduke",src:null,srcText:"webduke"},
- {t:"C&C Generals: Zero Hour",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/caiiiycuk/Generals-WebAssembly",srcText:"Source"},
- {t:"C&C Red Alert 2",st:"play",img:null,play:"https://chronodivide.com/",src:null,srcText:"ChronoDivide"},
- {t:"SCP: Containment Breach",st:"play",img:null,play:"https://q8j-dev.github.io/scpcb-web-port/",src:"https://github.com/q8j-dev/scpcb-web-port",srcText:"Source"},
+ {t:"C&C Generals: Zero Hour",st:"self",pic:"https://upload.wikimedia.org/wikipedia/en/0/0f/Cncgen-win-cover.jpg",play:null,playText:"Self-host",src:"https://github.com/caiiiycuk/Generals-WebAssembly",srcText:"Source"},
+ {t:"C&C Red Alert 2",st:"play",pic:"https://upload.wikimedia.org/wikipedia/en/1/11/Cncra2-win-cover.jpg",play:"https://chronodivide.com/",src:null,srcText:"ChronoDivide"},
+ {t:"SCP: Containment Breach",st:"play",pic:"https://upload.wikimedia.org/wikipedia/commons/5/54/SCP_-_Containment_Breach.jpg",play:"https://q8j-dev.github.io/scpcb-web-port/",src:"https://github.com/q8j-dev/scpcb-web-port",srcText:"Source"},
  {t:"Doom mods (Brutal Doom…)",st:"play",img:2300,h:1,play:"https://uzdoom.bootnet.io/",src:"https://github.com/abootnet/uzdoom-wasm",srcText:"Source"},
  {t:"Heroes of Might and Magic 3",st:"self",img:297000,play:null,playText:"Self-host",src:"https://github.com/caiiiycuk/vcmi-wasm",srcText:"Source"},
- {t:"Star Wars Jedi Knight: Dark Forces 2",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/quagsire23/OpenJKDF2",srcText:"Source"},
+ {t:"Star Wars Jedi Knight: Dark Forces 2",st:"self",pic:"https://upload.wikimedia.org/wikipedia/en/2/2f/JediKnight-cover.jpg",play:null,playText:"Self-host",src:"https://github.com/quagsire23/OpenJKDF2",srcText:"Source"},
  {t:"Jagged Alliance 2",st:"play",img:215930,play:"https://ja2.virtastic.app",src:"https://github.com/Virtastic/ja2-web",srcText:"Source"},
- {t:"GunZ: The Duel",st:"play",img:null,play:"https://gunz.sigr.io/",src:null,srcText:"Community port"},
+ {t:"GunZ: The Duel",st:"play",pic:"https://upload.wikimedia.org/wikipedia/commons/0/01/Gunz_The_Duel_logo.png",play:"https://gunz.sigr.io/",src:null,srcText:"Community port"},
  {t:"Arx Fatalis",st:"self",img:1700,h:1,play:null,playText:"Demo in repo",src:"https://github.com/gabrielcuvillier/arxwasm",srcText:"Source"},
- {t:"Touhou Eiyashou (TH08)",st:"self",img:null,play:null,playText:"Needs your game files",src:null,srcText:"Community port"},
- {t:"Dino Crisis (GOG)",st:"self",img:null,play:null,playText:"Via wasm.ltd",src:null,srcText:"wasm.ltd"},
+ {t:"Touhou Eiyashou (TH08)",st:"self",pic:"https://upload.wikimedia.org/wikipedia/en/5/59/Th08cover.jpg",play:null,playText:"Needs your game files",src:null,srcText:"Community port"},
+ {t:"Dino Crisis (GOG)",st:"self",pic:"https://upload.wikimedia.org/wikipedia/en/3/38/Dino_Crisis.jpg",play:null,playText:"Via wasm.ltd",src:null,srcText:"wasm.ltd"},
  {t:"Terraria",st:"self",img:105600,play:null,playText:"Self-host",src:"https://github.com/mercuryWorkshop/terraria-wasm",srcText:"Source"},
  {t:"Stardew Valley",st:"self",img:413150,play:null,playText:"Self-host",src:"https://github.com/degloved-net/stardew-wasm",srcText:"Source"},
  {t:"Celeste",st:"self",img:504230,play:null,playText:"Self-host",src:"https://github.com/MercuryWorkshop/celeste-wasm",srcText:"Source"},
@@ -117,7 +130,7 @@ const GAMES = [
  {t:"Inscryption",st:"play",img:1092790,play:"https://wasm.rip/files/inscryption/index.html",src:null,srcText:"wasm.rip"},
  {t:"Quake 1 / 2",st:"self",img:2310,play:null,playText:"Self-host",src:"https://github.com/GMH-Code/Qwasm",srcText:"Source"},
  {t:"Doom 1 / 2",st:"play",img:2280,play:"https://playdoom.ossy.dev/",src:"https://github.com/GMH-Code/Dwasm",srcText:"Source"},
- {t:"OpenXcom",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/midzer/OpenXcom",srcText:"Source"}
+ {t:"OpenXcom",st:"self",img:7760,play:null,playText:"Self-host",src:"https://github.com/midzer/OpenXcom",srcText:"Source"}
 ];
 const LISTS = [
  ["Ultimate Catalog (474 games)","https://github.com/Carter54git/Ultimate-Catalog-Of-Web-Game-Ports","Biggest catalog, 206 playable"],
@@ -145,7 +158,7 @@ let filter = "all";
 const grid = document.getElementById("grid");
 function imgHTML(g){
   const file = g.h ? "header.jpg" : "capsule_616x353.jpg";
-  const url = g.img ? CDN + g.img + "/" + file : ph(g.t);
+  const url = g.pic ? g.pic : (g.img ? CDN + g.img + "/" + file : ph(g.t));
   return `<img loading="lazy" src="${url}" alt="${g.t}" onerror="this.onerror=null;this.src=ph('${g.t.replace(/'/g,"")}')">`;
 }
 function render(){
@@ -171,7 +184,24 @@ document.getElementById("chips").addEventListener("click",e=>{
   if(e.target.tagName!=="BUTTON")return;
   filter = e.target.dataset.f;
   document.querySelectorAll("#chips button").forEach(b=>b.classList.toggle("on",b===e.target));
-  render();
+render();
+// Unified list: every game from every tracked list (data/all-games.json)
+let ALL = [];
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function renderAll(){
+  const q = document.getElementById("q").value.toLowerCase();
+  const list = ALL.filter(g => g.title.toLowerCase().includes(q));
+  document.getElementById("allcount").textContent = list.length + " of " + ALL.length + " games (one list, every list merged)";
+  const max = 600;
+  document.getElementById("allbody").innerHTML = list.slice(0,max).map(g=>{
+    const play = g.play_url ? `<a href="${esc(g.play_url)}" target="_blank" rel="noopener">Play</a>` : `<span class="mut">—</span>`;
+    const src = g.repo_url ? `<a href="${esc(g.repo_url)}" target="_blank" rel="noopener">Source</a>` : `<span class="mut">—</span>`;
+    return `<tr><td>${esc(g.title)}</td><td>${play}</td><td>${src}</td><td class="mut">${esc(g.lists.join(", "))}</td></tr>`;
+  }).join("") + (list.length>max ? `<tr><td colspan="4" class="mut">…and ${list.length-max} more — keep typing to narrow down</td></tr>` : "");
+}
+fetch("data/all-games.json").then(r=>r.json()).then(d=>{ ALL = d.games; renderAll(); })
+  .catch(()=>{ document.getElementById("allcount").textContent = "Open this page via http(s) to load the full list (data/all-games.json)."; });
+document.getElementById("q").addEventListener("input",()=>{ if(ALL.length) renderAll(); });
 });
 render();
 </script>

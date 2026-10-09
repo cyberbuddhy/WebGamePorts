@@ -2,7 +2,11 @@
 
 Play full PC games in your browser. No installs, no streaming — click a link and play.
 
-🌐 **Prefer a webpage?** Open `index.html` in this repo — same games with pictures, search, sort and filters.
+🌐 **Prefer a webpage?** Open `index.html` in this repo — same games with pictures, search, sort and filters, plus the full unified list below.
+
+## Every game — one unified list
+
+`data/all-games.json` merges **every game from every tracked list** (currently 483: the 474-game Ultimate Catalog + our own finds, deduped) with Play/Source links and which list each came from. The webpage shows it as a searchable table. `/scrapgames` keeps it updated.
 
 ## How to play
 
