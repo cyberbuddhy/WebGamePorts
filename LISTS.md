@@ -38,6 +38,19 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 | 32 | Play!.js (PS2 experiment) | https://playjs.purei.org/ — PS2 emulator in browser, experimental, few games boot | experiment | WASM | 2026-10-09 |
 | 33 | BrowserTools emulator | https://browser-tools.net/tools/emulator — NES/SNES/GBA, fully local, BYO ROM | minimal, BYO ROM | EmulatorJS | 2026-10-09 |
 | 34 | RadiantOpti viral wave (Oct 2026) | https://x.com/RadiantOpti/status/2108068628793082338 — 4.8M-view post: Skate 3, BO1 Zombies, Halo CE, MW2 in browser. See also Tweaktown's 20+ games roundup | viral thread + press | various WASM | 2026-10-09 |
+| 35 | PastPlay (N64 library) | https://pastplay.net/console/nintendo-64 | 994 N64 games in browser, save states, gamepad strongly recommended | ready-to-play library | 2026-10-09 |
+| 36 | ClassicEmu (23 platforms) | https://classicemu.com/ + https://www.classicemu.com/platform/n64.html | 2602 games: SNES 334, N64 188, PS1 237, GBA/DS etc. | ready-to-play library | 2026-10-09 |
+| 37 | Free Play Mode | https://freeplaymode.com/ | NES 767, SNES 660, N64 481, PS1 1049, GBA 2574, DS 811, Arcade 1896; no download, gamepad | ready-to-play library | 2026-10-09 |
+| 38 | OldGames.Games | https://oldgames.games/ | 1196 games, 14 platforms (SNES/NES/N64/GBA/PS1/Genesis/DS…), multiplayer rooms, save states | ready-to-play library + netplay | 2026-10-09 |
+| 39 | PlayF2P | https://www.playf2p.com/ | NES/SNES/Genesis/Master System/Game Gear/GB/GBC/GBA/N64/PS1/TG16/NGP/MSX/WonderSwan + Arcade; per-region pages, no account | ready-to-play library | 2026-10-09 |
+| 40 | Vizzed Retro Game Room | https://www.vizzed.com/playonlinegames/index.php + https://www.vizzed.com/play-n64 + https://www.vizzed.com/play-dc + https://www.vizzed.com/play-ss/ | 40k+ games, 50+ systems: N64 600+, Dreamcast 800+, Saturn 1200+ | ready-to-play library | 2026-10-09 |
+| 41 | EmulatorGamer (N64) | https://emulatorgamer.com/platforms/n64 | 193 N64 games, browser player | ready-to-play library | 2026-10-09 |
+| 42 | Last Emulator (N64/PS2/Dreamcast) | https://last-emulator.com/emulators/n64 + https://last-emulator.com/emulators/ps2 + https://last-emulator.com/emulators/dreamcast | BYO ROM/ISO, Mupen64Plus + PCSX2 cores, cloud saves, web + desktop | BYO frontend + cloud saves | 2026-10-09 |
+| 43 | Animal Crossing Online (GameCube WASM port) | https://animalcrossingonline.com/ | Full GC Animal Crossing in browser (decomp-based, BYO disc image, cloud saves, multiplayer visits, map editor) | engine port (decomp → WASM) | 2026-10-09 |
+| 44 | Monkey Ball Online (GameCube in browser) | https://monkeyball-online.pages.dev/ | Super Monkey Ball 1/2 (+widescreen) playable in Chrome/Edge, touch + gamepad | engine port → WASM | 2026-10-09 |
+| 45 | Netcade (multi-console BYO + netplay) | https://promethean-games.github.io/Netcade/ | N64/SNES/Genesis (+GC/Wii declared), drop-ROM frontend, 4-player online host/guest | BYO frontend + netplay | 2026-10-09 |
+| 46 | retrogames.blog library | https://retrogames.blog/en | GBA/NES/SNES/PS1/N64/Genesis/Arcade + DS, no download, Chrome recommended | ready-to-play library | 2026-10-09 |
+| 47 | retrogames.onl directory | https://www.retrogames.onl/p/play-retro-games-online.html | PS1/PSX, Mega Drive, Saturn, NES, SNES, N64, NDS per-system pages | directory of ready-to-play pages | 2026-10-09 |
 
 ## How lists overlap
 
@@ -46,5 +59,7 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 - #18 is DOSBox-WASM, not native-engine WASM — track separately (different tech).
 - #19 is newest (preservation-first, shared base: streaming asset layer + sync worker + SAB file bridge).
 - #20–33 are retro *console emulation* hubs (EmulatorJS/libretro cores → WASM), not engine ports: PS1/N64 play well (#21–27, #29, #31); GameCube has no native browser option (Afterplay lists it as coming-soon cloud); PS2 is one experiment (#32) — WASM lacks JIT/SIMD for these systems.
+- #35–42 + #46–47 are ready-to-play console *libraries* (per-system game pages, press Play): N64 (PastPlay 994, Vizzed 600+, Free Play Mode 481, ClassicEmu 188, EmulatorGamer 193), PS1 (Free Play Mode 1049), GBA (Free Play Mode 2574), DS (Free Play Mode 811), Saturn (Vizzed 1200+), Dreamcast (Vizzed 800+), Arcade (Free Play Mode 1896). PS2/DC via Last Emulator are BYO-ISO frontends (PCSX2 etc.), not bundled libraries.
+- #43–44 are the only true GameCube-in-browser engine ports (Animal Crossing Online, Monkey Ball Online — decomp → WASM, BYO disc where noted). #45 (Netcade) + RetroArch Dolphin core (#31) are BYO-ISO GameCube/Wii frontends, not bundled libraries.
 
 Add new lists via PR updating this file + `data/games.json` `in_lists[]`.

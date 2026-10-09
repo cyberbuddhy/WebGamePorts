@@ -89,12 +89,20 @@ Other sites that track browser ports (same simplified list as on the webpage):
 
 ## Retro consoles — where to play in the browser
 
-- NES / SNES / GB / GBC / GBA / Genesis: [EmuBrowser](https://emubrowser.com/), [EmuVault](https://emuvault.net/), [RetroPlayland](https://retroplayland.com/), [Afterplay](https://afterplay.io/), [RetroAssembly](https://retroassembly.com/), [Webretro](https://binbashbanana.github.io/webretro/), [Joe Heyming hub](https://joeheyming.github.io/emulator/)
-- N64: same hubs above + [RetroArch Web Player](https://web.libretro.com/)
-- PS1: same hubs + [PS1 hub](https://joeheyming.github.io/emulator/ps1/) + [Internet Archive Console Living Room](https://archive.org/details/consolelivingroom)
-- PS2: only an experiment — [Play!.js](https://playjs.purei.org/)
-- GameCube: no native browser option yet (Afterplay lists it as coming-soon cloud)
-- Tech behind most of them: [EmulatorJS](https://emulatorjs.com) (libretro cores → WASM). Bring your own ROMs; saves stay local unless noted.
+Ready-to-play libraries (open a game page, press Play, it boots in the tab). BYO ROM unless noted; saves stay local unless noted.
+
+- NES / SNES: [EmuBrowser](https://emubrowser.com/), [EmuVault](https://emuvault.net/), [RetroPlayland](https://retroplayland.com/), [Free Play Mode](https://freeplaymode.com/) (NES 767, SNES 660), [ClassicEmu](https://classicemu.com/) (SNES 334), [OldGames.Games](https://oldgames.games/), [PlayF2P](https://www.playf2p.com/), [Vizzed RGR](https://www.vizzed.com/playonlinegames/index.php) (40k games, 50+ systems)
+- GB / GBC / GBA: same hubs above + [Afterplay](https://afterplay.io/) (in-tab + cloud saves) + [RetroAssembly](https://retroassembly.com/), [Webretro](https://binbashbanana.github.io/webretro/), [Joe Heyming hub](https://joeheyming.github.io/emulator/) — GBA: 2574 on Free Play Mode, 103 on EmuVault
+- Genesis / Master System / Game Gear / Sega CD: [EmuBrowser](https://emubrowser.com/), [EmuVault](https://emuvault.net/), [Free Play Mode](https://freeplaymode.com/) (Genesis 557, SMS 243), [PlayF2P](https://www.playf2p.com/), [ClassicEmu](https://classicemu.com/)
+- N64 (994 on PastPlay, 481 on Free Play Mode, 600+ on Vizzed, 188 on ClassicEmu, 193 on EmulatorGamer): [PastPlay N64](https://pastplay.net/console/nintendo-64), [Free Play Mode](https://freeplaymode.com/), [ClassicEmu N64](https://www.classicemu.com/platform/n64.html), [EmulatorGamer N64](https://emulatorgamer.com/platforms/n64), [Vizzed N64](https://www.vizzed.com/play-n64), [Afterplay N64](https://afterplay.io/emulator/n64), [RetroArch Web Player](https://web.libretro.com/), [Netcade](https://promethean-games.github.io/Netcade/) (BYO + netplay), [Last Emulator N64](https://last-emulator.com/emulators/n64) (BYO, cloud saves)
+- PS1 (1049 on Free Play Mode, 212 on EmuVault): same N64 hubs + [PS1 hub](https://joeheyming.github.io/emulator/ps1/) + [Internet Archive Console Living Room](https://archive.org/details/consolelivingroom)
+- Nintendo DS (811 on Free Play Mode, 123 on EmuVault, 147 on ClassicEmu): [Free Play Mode](https://freeplaymode.com/), [EmuVault](https://emuvault.net/), [ClassicEmu](https://classicemu.com/), [OldGames.Games](https://oldgames.games/) (DS online w/ Premium), [retrogames.blog](https://retrogames.blog/en)
+- Saturn / Dreamcast: [Vizzed Saturn](https://www.vizzed.com/play-ss/) (1200+), [Vizzed Dreamcast](https://www.vizzed.com/play-dc) (800+), [Last Emulator Dreamcast](https://last-emulator.com/emulators/dreamcast) (BYO disc image, cloud saves)
+- Arcade / Neo Geo / TurboGrafx-16 / Atari / DOS: [Free Play Mode](https://freeplaymode.com/) (Arcade 1896), [ClassicEmu](https://classicemu.com/) (Arcade 414), [Vizzed RGR](https://www.vizzed.com/playonlinegames/index.php), [IA Living Room](https://archive.org/details/consolelivingroom), [DOS abandonware hubs](https://archive.org/details/softwarelibrary_msdos_games)
+- PS2: experiment only — [Play!.js](https://playjs.purei.org/); BYO-ISO frontend: [Last Emulator PS2](https://last-emulator.com/emulators/ps2) (PCSX2 core, cloud saves)
+- Wii (BYO ISO): [RetroArch Web Player](https://web.libretro.com/) (Dolphin core) + [Netcade](https://promethean-games.github.io/Netcade/)
+- GameCube — no general browser emu (WASM lacks JIT/SIMD for it). What actually runs: [Animal Crossing Online](https://animalcrossingonline.com/) (full GC→WASM port, BYO disc, cloud saves) + [Monkey Ball Online](https://monkeyball-online.pages.dev/) (SMB1/2 in browser) + [RetroArch Dolphin core](https://web.libretro.com/) (BYO ISO) + [Afterplay](https://afterplay.io/) (cloud coming-soon) + [Netcade](https://promethean-games.github.io/Netcade/) (BYO frontend)
+- Tech behind most hubs: [EmulatorJS](https://emulatorjs.com) (libretro cores → WASM). N64/PS1 play well; GameCube/Wii/PS2 need the exceptions above.
 
 ## Add a game
 
