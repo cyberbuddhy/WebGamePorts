@@ -2,6 +2,8 @@
 
 Play full PC games in your browser. No installs, no streaming — click a link and play.
 
+🌐 **Prefer a webpage?** Open `index.html` in this repo — same games with pictures, search, sort and filters.
+
 ## How to play
 
 1. Open a **Play** link below in Chrome or Edge.
@@ -54,7 +56,27 @@ Notes and extra details on the hard-to-find ones: see `GAMES_EXTRA.md`.
 
 ## Game lists
 
-Other sites that track browser ports: see `LISTS.md` (19 lists, including a 474-game catalog).
+Other sites that track browser ports (same simplified list as on the webpage):
+
+- [Ultimate Catalog (474 games)](https://github.com/Carter54git/Ultimate-Catalog-Of-Web-Game-Ports) — biggest catalog, 206 playable
+- [genizy/web-ports](https://github.com/genizy/web-ports) — 100+ full-game ports
+- [web-ports org](https://github.com/web-ports) — one repo per game
+- [midzer.de/games](https://midzer.de/games) — 60+ Emscripten ports
+- [wasm.rip](https://wasm.rip/) — porting collective
+- [webport.ing](https://webport.ing/) — indie port team
+- [quenq directory](https://quenq.com/directory/) — Vice City, Simpsons…
+- [dos.zone](https://dos.zone) — 2000+ DOS games in browser
+- [gn-math](https://gn-math.dev/) — school-friendly ports host
+- [retrogamescenter.ru](https://retrogamescenter.ru/) — Russian ports hub
+- [RetroPlay](https://github.com/MahanKenway/RetroPlay) — curated retro hub
+- [webassemblygames.com](https://www.webassemblygames.com/) — WASM games + dev guides
+- [Browser-games HN list](https://sigmonsays.github.io/browser-games.html) — big-title list
+- [null.53bits ports](https://null.53bits.co.uk/page/in-browser-game-ports) — editorial list
+- [Ported2Browser](https://ported2browser.com/) — hosted builds index
+- [Open Awesome Emscripten](https://open-awesome.com/stacks/emscripten) — open-source builds
+- [wasm.ltd](https://revc.wasm.ltd) — preservation ports
+- [DOS abandonware hubs](https://archive.org/details/softwarelibrary_msdos_games) — 1000s via Internet Archive
+- [genizy/web-port-list](https://github.com/genizy/web-port-list) — full list + credits
 
 ## Add a game
 

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebGamePorts — Play PC Games in Your Browser</title>
+<style>
+  :root { --bg:#12141a; --card:#1c1f27; --text:#e8eaf0; --muted:#9aa0ae; --acc:#5ad1ff; --green:#4ade80; --yellow:#fbbf24; --red:#f87171; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { padding:28px 20px 10px; text-align:center; }
+  header h1 { margin:0 0 6px; font-size:28px; }
+  header p { margin:0; color:var(--muted); }
+  .bar { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; padding:16px 20px; position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid #262a35; }
+  .bar input, .bar select { padding:9px 12px; border-radius:8px; border:1px solid #333; background:var(--card); color:var(--text); font-size:14px; }
+  .bar input { min-width:220px; }
+  .chips { display:flex; gap:8px; justify-content:center; padding:12px 20px 0; flex-wrap:wrap; }
+  .chips button { padding:7px 14px; border-radius:20px; border:1px solid #333; background:var(--card); color:var(--text); cursor:pointer; font-size:13px; }
+  .chips button.on { border-color:var(--acc); color:var(--acc); }
+  .count { text-align:center; color:var(--muted); font-size:13px; padding:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; padding:16px 20px 30px; max-width:1200px; margin:0 auto; }
+  .card { background:var(--card); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid #262a35; }
+  .card img { width:100%; aspect-ratio:616/353; object-fit:cover; display:block; background:#262a35; }
+  .card .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card h3 { margin:0; font-size:16px; }
+  .badge { font-size:11px; padding:3px 9px; border-radius:12px; display:inline-block; width:fit-content; }
+  .b-play { background:rgba(74,222,128,.15); color:var(--green); }
+  .b-self { background:rgba(251,191,36,.15); color:var(--yellow); }
+  .b-off { background:rgba(248,113,113,.15); color:var(--red); }
+  .row { display:flex; gap:8px; margin-top:auto; }
+  .row a { flex:1; text-align:center; padding:8px; border-radius:8px; font-size:13px; text-decoration:none; font-weight:600; }
+  .go { background:var(--acc); color:#06222e; }
+  .go.dis { background:#333; color:var(--muted); pointer-events:none; }
+  .src { background:#2a2e39; color:var(--text); }
+  section.lists { max-width:1200px; margin:0 auto; padding:0 20px 40px; }
+  section.lists h2 { font-size:20px; }
+  section.lists ul { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:8px; }
+  section.lists li { background:var(--card); border:1px solid #262a35; border-radius:8px; padding:10px 12px; font-size:14px; }
+  section.lists a { color:var(--acc); text-decoration:none; font-weight:600; }
+  section.lists span { color:var(--muted); font-size:12px; display:block; }
+  footer { text-align:center; color:var(--muted); font-size:12px; padding:0 20px 30px; }
+  footer a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎮 WebGamePorts</h1>
+  <p>Full PC games that run in your browser. Click and play — no installs.</p>
+</header>
+<div class="bar">
+  <input id="q" type="search" placeholder="Search games…" autocomplete="off">
+  <select id="sort">
+    <option value="pop">Sort: Most popular</option>
+    <option value="az">Sort: A–Z</option>
+    <option value="playable">Sort: Playable first</option>
+  </select>
+</div>
+<div class="chips" id="chips">
+  <button data-f="all" class="on">All</button>
+  <button data-f="play">▶ Play now</button>
+  <button data-f="self">🔧 Self-host</button>
+  <button data-f="off">💤 Offline</button>
+</div>
+<div class="count" id="count"></div>
+<div class="grid" id="grid"></div>
+
+<section class="lists">
+  <h2>📚 Game lists</h2>
+  <ul id="lists"></ul>
+</section>
+
+<footer>
+  Images: Steam store capsules via Steam CDN belong to their publishers; placeholders where unavailable.<br>
+  Game files usually not included — bring your own copy. Full data: <a href="https://github.com/cyberbuddhy/WebGamePorts">github.com/cyberbuddhy/WebGamePorts</a>
+</footer>
+
+<script>
+const CDN = "https://cdn.cloudflare.steamstatic.com/steam/apps/";
+function ph(t){ // SVG placeholder with game initial
+  const c = encodeURIComponent(t.trim()[0].toUpperCase());
+  const s = `<svg xmlns='http://www.w3.org/2000/svg' width='616' height='353'><rect width='100%' height='100%' fill='#262a35'/><text x='50%' y='56%' font-size='120' fill='#5ad1ff' text-anchor='middle' font-family='sans-serif'>${c}</text></svg>`;
+  return "data:image/svg+xml," + s;
+}
+// st: play = click & play, self = host it yourself, off = offline
+const GAMES = [
+ {t:"GTA V",st:"off",img:null,play:null,playText:"Offline since Oct 2026",src:"https://github.com/shadany7824/playgta5",srcText:"Archive"},
+ {t:"Half-Life 2 + Episodes",st:"play",img:220,play:"https://hl2.slqnt.dev",src:"https://www.slqnt.dev/blog/hl2-in-web",srcText:"How it was ported"},
+ {t:"GTA: Vice City",st:"play",img:12110,play:"https://revc.wasm.ltd",src:"https://github.com/origami-ltd/wasm-revc",srcText:"Source"},
+ {t:"Portal",st:"self",img:400,play:null,playText:"Via weliveinhell port",src:null,srcText:"weliveinhell port"},
+ {t:"The Simpsons: Hit & Run",st:"play",img:null,play:"https://shar-wasm.cjoseph.workers.dev/?skipmovie=",src:"https://news.ycombinator.com/item?id=47783061",srcText:"Discussion"},
+ {t:"Counter-Strike 1.6",st:"play",img:10,play:"https://dos.zone/mp/?lobby=cs16",src:null,srcText:"Xash3D engine"},
+ {t:"Half-Life 1",st:"play",img:70,play:"https://x8bitrain.github.io/webXash/",src:null,srcText:"Xash3D engine"},
+ {t:"Doom 3",st:"play",img:9050,h:1,play:"https://wasm.continuation-labs.com/d3demo/",src:"https://github.com/web-ports/doom-3",srcText:"Source"},
+ {t:"Quake 3 Arena",st:"play",img:2200,play:"https://thelongestyard.link/q3a-demo/",src:"https://github.com/JWally/web-quaker",srcText:"Multiplayer fork"},
+ {t:"Unreal Tournament",st:"play",img:13240,play:"https://dos.zone/mp/?lobby=ut",src:null,srcText:"dos.zone build"},
+ {t:"Morrowind",st:"play",img:22320,play:"https://morrowind.virtastic.app",src:"https://github.com/Virtastic/openmw-web",srcText:"Source"},
+ {t:"Diablo 1",st:"play",img:null,play:"https://devilutionx.app",src:"https://github.com/diasurgical/devilutionX",srcText:"Source"},
+ {t:"Tomb Raider 1",st:"play",img:null,play:"http://xproger.info/projects/OpenLara/",src:"https://github.com/XProger/OpenLara",srcText:"Source"},
+ {t:"Duke Nukem 3D",st:"play",img:434050,play:"https://gawen.me/webduke",src:null,srcText:"webduke"},
+ {t:"C&C Generals: Zero Hour",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/caiiiycuk/Generals-WebAssembly",srcText:"Source"},
+ {t:"C&C Red Alert 2",st:"play",img:null,play:"https://chronodivide.com/",src:null,srcText:"ChronoDivide"},
+ {t:"SCP: Containment Breach",st:"play",img:null,play:"https://q8j-dev.github.io/scpcb-web-port/",src:"https://github.com/q8j-dev/scpcb-web-port",srcText:"Source"},
+ {t:"Doom mods (Brutal Doom…)",st:"play",img:2300,h:1,play:"https://uzdoom.bootnet.io/",src:"https://github.com/abootnet/uzdoom-wasm",srcText:"Source"},
+ {t:"Heroes of Might and Magic 3",st:"self",img:297000,play:null,playText:"Self-host",src:"https://github.com/caiiiycuk/vcmi-wasm",srcText:"Source"},
+ {t:"Star Wars Jedi Knight: Dark Forces 2",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/quagsire23/OpenJKDF2",srcText:"Source"},
+ {t:"Jagged Alliance 2",st:"play",img:215930,play:"https://ja2.virtastic.app",src:"https://github.com/Virtastic/ja2-web",srcText:"Source"},
+ {t:"GunZ: The Duel",st:"play",img:null,play:"https://gunz.sigr.io/",src:null,srcText:"Community port"},
+ {t:"Arx Fatalis",st:"self",img:1700,h:1,play:null,playText:"Demo in repo",src:"https://github.com/gabrielcuvillier/arxwasm",srcText:"Source"},
+ {t:"Touhou Eiyashou (TH08)",st:"self",img:null,play:null,playText:"Needs your game files",src:null,srcText:"Community port"},
+ {t:"Dino Crisis (GOG)",st:"self",img:null,play:null,playText:"Via wasm.ltd",src:null,srcText:"wasm.ltd"},
+ {t:"Terraria",st:"self",img:105600,play:null,playText:"Self-host",src:"https://github.com/mercuryWorkshop/terraria-wasm",srcText:"Source"},
+ {t:"Stardew Valley",st:"self",img:413150,play:null,playText:"Self-host",src:"https://github.com/degloved-net/stardew-wasm",srcText:"Source"},
+ {t:"Celeste",st:"self",img:504230,play:null,playText:"Self-host",src:"https://github.com/MercuryWorkshop/celeste-wasm",srcText:"Source"},
+ {t:"Fallout 1",st:"self",img:38400,play:null,playText:"Self-host",src:"https://github.com/midzer/fallout1-ce",srcText:"Source"},
+ {t:"Sonic Mania",st:"self",img:584400,play:null,playText:"Self-host",src:null,srcText:"Community port"},
+ {t:"OpenTTD",st:"self",img:1536610,play:null,playText:"Self-host",src:null,srcText:"OpenTTD"},
+ {t:"Inscryption",st:"play",img:1092790,play:"https://wasm.rip/files/inscryption/index.html",src:null,srcText:"wasm.rip"},
+ {t:"Quake 1 / 2",st:"self",img:2310,play:null,playText:"Self-host",src:"https://github.com/GMH-Code/Qwasm",srcText:"Source"},
+ {t:"Doom 1 / 2",st:"play",img:2280,play:"https://playdoom.ossy.dev/",src:"https://github.com/GMH-Code/Dwasm",srcText:"Source"},
+ {t:"OpenXcom",st:"self",img:null,play:null,playText:"Self-host",src:"https://github.com/midzer/OpenXcom",srcText:"Source"}
+];
+const LISTS = [
+ ["Ultimate Catalog (474 games)","https://github.com/Carter54git/Ultimate-Catalog-Of-Web-Game-Ports","Biggest catalog, 206 playable"],
+ ["genizy/web-ports","https://github.com/genizy/web-ports","100+ full-game ports"],
+ ["web-ports org","https://github.com/web-ports","One repo per game"],
+ ["midzer.de/games","https://midzer.de/games","60+ Emscripten ports"],
+ ["wasm.rip","https://wasm.rip/","Porting collective"],
+ ["webport.ing","https://webport.ing/","Indie port team"],
+ ["quenq directory","https://quenq.com/directory/","Vice City, Simpsons…"],
+ ["dos.zone","https://dos.zone","2000+ DOS games in browser"],
+ ["gn-math","https://gn-math.dev/","School-friendly ports host"],
+ ["retrogamescenter.ru","https://retrogamescenter.ru/","Russian ports hub"],
+ ["RetroPlay","https://github.com/MahanKenway/RetroPlay","Curated retro hub"],
+ ["webassemblygames.com","https://www.webassemblygames.com/","WASM games + dev guides"],
+ ["Browser-games HN list","https://sigmonsays.github.io/browser-games.html","Big-title list"],
+ ["null.53bits ports","https://null.53bits.co.uk/page/in-browser-game-ports","Editorial list"],
+ ["Ported2Browser","https://ported2browser.com/","Hosted builds index"],
+ ["Open Awesome Emscripten","https://open-awesome.com/stacks/emscripten","Open-source builds"],
+ ["wasm.ltd","https://revc.wasm.ltd","Preservation ports"],
+ ["DOS abandonware hubs","https://archive.org/details/softwarelibrary_msdos_games","1000s via Internet Archive"],
+ ["genizy/web-port-list","https://github.com/genizy/web-port-list","Full list + credits"]
+];
+const BADGE = {play:["▶ Play now","b-play"],self:["🔧 Self-host","b-self"],off:["💤 Offline","b-off"]};
+let filter = "all";
+const grid = document.getElementById("grid");
+function imgHTML(g){
+  const file = g.h ? "header.jpg" : "capsule_616x353.jpg";
+  const url = g.img ? CDN + g.img + "/" + file : ph(g.t);
+  return `<img loading="lazy" src="${url}" alt="${g.t}" onerror="this.onerror=null;this.src=ph('${g.t.replace(/'/g,"")}')">`;
+}
+function render(){
+  const q = document.getElementById("q").value.toLowerCase();
+  const sort = document.getElementById("sort").value;
+  let list = GAMES.filter(g => (filter==="all"||g.st===filter) && g.t.toLowerCase().includes(q));
+  if (sort==="az") list = [...list].sort((a,b)=>a.t.localeCompare(b.t));
+  if (sort==="playable") list = [...list].sort((a,b)=>({play:0,self:1,off:2}[a.st]-{play:0,self:1,off:2}[b.st]));
+  document.getElementById("count").textContent = list.length + " of " + GAMES.length + " games";
+  grid.innerHTML = list.map(g=>{
+    const [bt,bc] = BADGE[g.st];
+    const go = g.play ? `<a class="go" href="${g.play}" target="_blank" rel="noopener">Play</a>`
+                      : `<a class="go dis">${g.playText||"No link"}</a>`;
+    const src = g.src ? `<a class="src" href="${g.src}" target="_blank" rel="noopener">${g.srcText||"Source"}</a>`
+                      : `<a class="src dis" style="pointer-events:none">${g.srcText||"Source"}</a>`;
+    return `<div class="card">${imgHTML(g)}<div class="body"><h3>${g.t}</h3><span class="badge ${bc}">${bt}</span><div class="row">${go}${src}</div></div></div>`;
+  }).join("");
+}
+document.getElementById("lists").innerHTML = LISTS.map(([n,u,d])=>`<li><a href="${u}" target="_blank" rel="noopener">${n}</a><span>${d}</span></li>`).join("");
+document.getElementById("q").addEventListener("input",render);
+document.getElementById("sort").addEventListener("change",render);
+document.getElementById("chips").addEventListener("click",e=>{
+  if(e.target.tagName!=="BUTTON")return;
+  filter = e.target.dataset.f;
+  document.querySelectorAll("#chips button").forEach(b=>b.classList.toggle("on",b===e.target));
+  render();
+});
+render();
+</script>
+</body>
+</html>

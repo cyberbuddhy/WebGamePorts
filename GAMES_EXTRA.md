@@ -1,7 +1,7 @@
 # Extra Games
 
-Games that are hard to find — missing or incomplete in the big lists from `LISTS.md`.
-Sorted most popular first. Checked 2026-10-09.
+> The main list for every game lives in `README.md` (and on the `index.html` webpage) — everything below is also there. This file just adds the details for games that are hard to find.
+
 
 ## 1. GTA V
 
