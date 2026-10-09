@@ -45,6 +45,7 @@ For each candidate, fetch the Play URL + repo README. Extract:
 - Append to `data/games.json` (`games[]`): `{title, play_url, repo_url, engine, tech, status, last_verified: YYYY-MM-DD, in_lists[], needs_own_files, notes}`. Bump `meta.last_scrape`, `meta.total_extra_not_in_any_list`.
 - Append section to `GAMES_EXTRA.md`: `## N. Title` with bullets Play/Source/Tech/Needs/Proof/In-lists? (same style as existing).
 - If a NEW list/hub found (not in `LISTS.md`), append row to `LISTS.md`.
+- Every new game needs a card image: run `python3 scripts/fetch_images.py --embed` after editing data (resolves Steam capsule → GitHub repo preview; whatever is still imageless stays on the gradient placeholder and must be listed in the report). Never invent `img`/`pic` URLs by hand — only verified ones.
 - Run `python3 scripts/validate.py` (checks JSON schema + duplicate play/repo URLs). Fix until clean.
 
 ## 4. Report back (single message)
