@@ -1,6 +1,6 @@
 # WebGamePorts
 
-Play full PC games in your browser. No installs, no streaming — click a link and play.
+The portal to real games on the web. Full PC & console classics that run in your browser — click a link and play.
 
 🌐 **Prefer a webpage?** Open `index.html` in this repo — same games with pictures, search, sort and filters, plus the full unified list below.
 
@@ -22,39 +22,43 @@ That's it. Saves stay in your browser.
 |---|---|---|---|
 | 1 | GTA V | offline (archived copy: `shadany7824/playgta5`) | frontend archive on GitHub |
 | 2 | Half-Life 2 + Episodes | https://hl2.slqnt.dev | slqnt + 98006 |
-| 3 | GTA: Vice City | https://revc.wasm.ltd, https://quenq.com/apps/vice-city/ | `origami-ltd/wasm-revc` |
-| 4 | Portal | via `weliveinhell` portal webport | `weliveinhell` / `nillerusr` |
-| 5 | The Simpsons: Hit & Run | https://shar-wasm.cjoseph.workers.dev/?skipmovie= | community port (see HN) |
-| 6 | Counter-Strike 1.6 | `dos.zone/mp/?lobby=cs16` | Xash3D (`yohimik/webxash3d-fwgs`) |
-| 7 | Half-Life 1 | https://x8bitrain.github.io/webXash/ | Xash3D FWGS |
-| 8 | Doom 3 | https://wasm.continuation-labs.com/d3demo/ | `web-ports/doom-3` |
-| 9 | Quake 3 Arena | https://thelongestyard.link/q3a-demo/ | `JWally/web-quaker` (multiplayer fork) |
-| 10 | Unreal Tournament | `dos.zone/mp/?lobby=ut` | dos.zone build |
-| 11 | Morrowind | https://morrowind.virtastic.app | `Virtastic/openmw-web` |
-| 12 | Diablo 1 | https://devilutionx.app | DevilutionX (`d07RiV/diabloweb`) |
-| 13 | Tomb Raider 1 | http://xproger.info/projects/OpenLara/ | `XProger/OpenLara` |
-| 14 | Duke Nukem 3D | https://gawen.me/webduke | webduke |
-| 15 | C&C Generals: Zero Hour | self-host | `caiiiycuk/Generals-WebAssembly` |
-| 16 | C&C Red Alert 2 | https://chronodivide.com/ | ChronoDivide |
-| 17 | SCP: Containment Breach | https://q8j-dev.github.io/scpcb-web-port/ | `q8j-dev/scpcb-web-port` |
-| 18 | Doom mods (Brutal Doom etc.) | https://uzdoom.bootnet.io/ | `abootnet/uzdoom-wasm` |
-| 19 | Heroes of Might and Magic 3 | self-host | `caiiiycuk/vcmi-wasm` |
-| 20 | Star Wars Jedi Knight: Dark Forces 2 | self-host | `quagsire23/OpenJKDF2` |
-| 21 | Jagged Alliance 2 | https://ja2.virtastic.app | `Virtastic/ja2-web` |
-| 22 | GunZ: The Duel | https://gunz.sigr.io/ | community port |
-| 23 | Arx Fatalis | demo in repo | `gabrielcuvillier/arxwasm` |
-| 24 | Touhou Eiyashou (TH08) | self-host (needs your `th08.dat`) | community port |
-| 25 | Dino Crisis (GOG) | via `wasm.ltd` | `wasm.ltd` initiative |
-| 26 | Terraria | self-host | `mercuryWorkshop/terraria-wasm` |
-| 27 | Stardew Valley | self-host | `degloved-net/stardew-wasm` |
-| 28 | Celeste | self-host | `MercuryWorkshop/celeste-wasm` |
-| 29 | Fallout 1 | self-host | `midzer/fallout1-ce` |
-| 30 | Sonic Mania / 1 / 2 / CD | self-host | `VinMannie/*`, `TWS2401/Sonic-CD-WASM` |
-| 31 | OpenTTD | self-host | `midzer` / OpenTTD |
-| 32 | Inscryption | `wasm.rip/files/inscryption` | `reeyuki` |
-| 33 | Quake 1 / 2 | self-host | `GMH-Code/Qwasm` |
-| 34 | Doom 1 / 2 | https://playdoom.ossy.dev/ | `GMH-Code/Dwasm`, `UstymUkhman/webDOOM` |
-| 35 | OpenXcom | self-host | `midzer/OpenXcom` |
+| 3 | Halo: Combat Evolved 🔥 | https://fqlx.github.io/halo-ce-universal/ | decomp (BYO Xbox ISO, 128p MP) |
+| 4 | Black Ops 1 Zombies 🔥 | https://vel.gg/bo1z | fan port (all maps + DLC, free) |
+| 5 | Skate 3 🔥 | https://skate.aaddpp.lol/ | Asher (BYO copy, multiplayer) |
+| 6 | Modern Warfare 2 (OVZ) 🔥 | https://ovz-game-production.up.railway.app/ | Angelo (PC + mobile) |
+| 7 | GTA: Vice City | https://revc.wasm.ltd, https://quenq.com/apps/vice-city/ | `origami-ltd/wasm-revc` |
+| 8 | Portal | via `weliveinhell` portal webport | `weliveinhell` / `nillerusr` |
+| 9 | The Simpsons: Hit & Run | https://shar-wasm.cjoseph.workers.dev/?skipmovie= | community port (see HN) |
+| 10 | Counter-Strike 1.6 | `dos.zone/mp/?lobby=cs16` | Xash3D (`yohimik/webxash3d-fwgs`) |
+| 11 | Half-Life 1 | https://x8bitrain.github.io/webXash/ | Xash3D FWGS |
+| 12 | Doom 3 | https://wasm.continuation-labs.com/d3demo/ | `web-ports/doom-3` |
+| 13 | Quake 3 Arena | https://thelongestyard.link/q3a-demo/ | `JWally/web-quaker` (multiplayer fork) |
+| 14 | Unreal Tournament | `dos.zone/mp/?lobby=ut` | dos.zone build |
+| 15 | Morrowind | https://morrowind.virtastic.app | `Virtastic/openmw-web` |
+| 16 | Diablo 1 | https://devilutionx.app | DevilutionX (`d07RiV/diabloweb`) |
+| 17 | Tomb Raider 1 | http://xproger.info/projects/OpenLara/ | `XProger/OpenLara` |
+| 18 | Duke Nukem 3D | https://gawen.me/webduke | webduke |
+| 19 | C&C Generals: Zero Hour | self-host | `caiiiycuk/Generals-WebAssembly` |
+| 20 | C&C Red Alert 2 | https://chronodivide.com/ | ChronoDivide |
+| 21 | SCP: Containment Breach | https://q8j-dev.github.io/scpcb-web-port/ | `q8j-dev/scpcb-web-port` |
+| 22 | Doom mods (Brutal Doom etc.) | https://uzdoom.bootnet.io/ | `abootnet/uzdoom-wasm` |
+| 23 | Heroes of Might and Magic 3 | self-host | `caiiiycuk/vcmi-wasm` |
+| 24 | Star Wars Jedi Knight: Dark Forces 2 | self-host | `quagsire23/OpenJKDF2` |
+| 25 | Jagged Alliance 2 | https://ja2.virtastic.app | `Virtastic/ja2-web` |
+| 26 | GunZ: The Duel | https://gunz.sigr.io/ | community port |
+| 27 | Arx Fatalis | demo in repo | `gabrielcuvillier/arxwasm` |
+| 28 | Touhou Eiyashou (TH08) | self-host (needs your `th08.dat`) | community port |
+| 29 | Dino Crisis (GOG) | via `wasm.ltd` | `wasm.ltd` initiative |
+| 30 | Terraria | self-host | `mercuryWorkshop/terraria-wasm` |
+| 31 | Stardew Valley | self-host | `degloved-net/stardew-wasm` |
+| 32 | Celeste | self-host | `MercuryWorkshop/celeste-wasm` |
+| 33 | Fallout 1 | self-host | `midzer/fallout1-ce` |
+| 34 | Sonic Mania / 1 / 2 / CD | self-host | `VinMannie/*`, `TWS2401/Sonic-CD-WASM` |
+| 35 | OpenTTD | self-host | `midzer` / OpenTTD |
+| 36 | Inscryption | `wasm.rip/files/inscryption` | `reeyuki` |
+| 37 | Quake 1 / 2 | self-host | `GMH-Code/Qwasm` |
+| 38 | Doom 1 / 2 | https://playdoom.ossy.dev/ | `GMH-Code/Dwasm`, `UstymUkhman/webDOOM` |
+| 39 | OpenXcom | self-host | `midzer/OpenXcom` |
 
 Notes and extra details on the hard-to-find ones: see `GAMES_EXTRA.md`.
 
@@ -81,6 +85,7 @@ Other sites that track browser ports (same simplified list as on the webpage):
 - [wasm.ltd](https://revc.wasm.ltd) — preservation ports
 - [DOS abandonware hubs](https://archive.org/details/softwarelibrary_msdos_games) — 1000s via Internet Archive
 - [genizy/web-port-list](https://github.com/genizy/web-port-list) — full list + credits
+- [RadiantOpti viral wave (Oct 2026)](https://x.com/RadiantOpti/status/2108068628793082338) — Skate 3, BO1 Zombies, Halo, MW2 in browser
 
 ## Retro consoles — where to play in the browser
 

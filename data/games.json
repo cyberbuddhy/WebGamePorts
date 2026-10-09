@@ -29,6 +29,54 @@
       "title": "Half-Life 2"
     },
     {
+      "title": "Halo: Combat Evolved",
+      "play_url": "https://fqlx.github.io/halo-ce-universal/",
+      "repo_url": "https://github.com/damiantw/halo-ce-web-multiplayer",
+      "engine": "Halo decompilation (bnunu/halo-1 family)",
+      "tech": "WASM + WebGL2 + WebRTC MP",
+      "status": "live",
+      "last_verified": "2026-10-09",
+      "in_lists": [],
+      "needs_own_files": true,
+      "notes": "BYO Xbox ISO. 128-player MP + split-screen. Via RadiantOpti wave."
+    },
+    {
+      "title": "Black Ops 1 Zombies",
+      "play_url": "https://vel.gg/bo1z",
+      "repo_url": "shared by MrTLexify on X",
+      "engine": "BO1 engine (fan port)",
+      "tech": "WASM, needs HW acceleration",
+      "status": "live",
+      "last_verified": "2026-10-09",
+      "in_lists": [],
+      "needs_own_files": false,
+      "notes": "All 10 maps + every DLC, no copy needed."
+    },
+    {
+      "title": "Skate 3",
+      "play_url": "https://skate.aaddpp.lol/",
+      "repo_url": "by Asher @aaddpp_vmp",
+      "engine": "Skate 3 engine (fan port)",
+      "tech": "WASM, engine streams, MP + mobile",
+      "status": "live",
+      "last_verified": "2026-10-09",
+      "in_lists": [],
+      "needs_own_files": true,
+      "notes": "BYO converted copy; no content hosted. 300+ FPS reported."
+    },
+    {
+      "title": "Modern Warfare 2 (OVZ)",
+      "play_url": "https://ovz-game-production.up.railway.app/",
+      "repo_url": "Open Victor Zulu by Angelo",
+      "engine": "MW2 2009 (AI-assisted fan port)",
+      "tech": "WASM, PC + mobile",
+      "status": "live",
+      "last_verified": "2026-10-09",
+      "in_lists": [],
+      "needs_own_files": false,
+      "notes": "OVZ Global Flashpoint. Bot-shielded (429 to scripts)."
+    },
+    {
       "engine": "reVC decompilation",
       "in_lists": [
         "ultimate-partial-different-repo"
@@ -158,6 +206,6 @@
     "last_scrape": "2026-10-09",
     "lists_tracked": 19,
     "source": "WebGamePorts /scrapgames v1",
-    "total_extra_not_in_any_list": 12
+    "total_extra_not_in_any_list": 13
   }
 }

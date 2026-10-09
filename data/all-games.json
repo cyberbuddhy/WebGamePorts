@@ -1,6 +1,6 @@
 {
  "meta": {
-  "total": 483,
+  "total": 487,
   "sources": [
    "ultimate-474",
    "webgameports"
@@ -3871,6 +3871,38 @@
    "title": "GunZ: The Duel",
    "play_url": "https://gunz.sigr.io/",
    "repo_url": "https://github.com/LostMyCode/d3d9-webgl (translation layer)",
+   "lists": [
+    "webgameports"
+   ]
+  },
+  {
+   "title": "Halo: Combat Evolved",
+   "play_url": "https://fqlx.github.io/halo-ce-universal/",
+   "repo_url": "https://github.com/damiantw/halo-ce-web-multiplayer",
+   "lists": [
+    "webgameports"
+   ]
+  },
+  {
+   "title": "Black Ops 1 Zombies",
+   "play_url": "https://vel.gg/bo1z",
+   "repo_url": null,
+   "lists": [
+    "webgameports"
+   ]
+  },
+  {
+   "title": "Skate 3",
+   "play_url": "https://skate.aaddpp.lol/",
+   "repo_url": null,
+   "lists": [
+    "webgameports"
+   ]
+  },
+  {
+   "title": "Modern Warfare 2 (OVZ)",
+   "play_url": "https://ovz-game-production.up.railway.app/",
+   "repo_url": null,
    "lists": [
     "webgameports"
    ]

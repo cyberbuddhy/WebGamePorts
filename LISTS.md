@@ -37,6 +37,7 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 | 31 | RetroArch Web Player (official) | https://web.libretro.com/ — RetroArch in browser, 40+ cores, BYO content | official, BYO ROM | Emscripten | 2026-10-09 |
 | 32 | Play!.js (PS2 experiment) | https://playjs.purei.org/ — PS2 emulator in browser, experimental, few games boot | experiment | WASM | 2026-10-09 |
 | 33 | BrowserTools emulator | https://browser-tools.net/tools/emulator — NES/SNES/GBA, fully local, BYO ROM | minimal, BYO ROM | EmulatorJS | 2026-10-09 |
+| 34 | RadiantOpti viral wave (Oct 2026) | https://x.com/RadiantOpti/status/2108068628793082338 — 4.8M-view post: Skate 3, BO1 Zombies, Halo CE, MW2 in browser. See also Tweaktown's 20+ games roundup | viral thread + press | various WASM | 2026-10-09 |
 
 ## How lists overlap
 

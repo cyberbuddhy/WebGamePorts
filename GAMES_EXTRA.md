@@ -2,6 +2,14 @@
 
 > The main list for every game lives in `README.md` (and on the `index.html` webpage) — everything below is also there. This file just adds the details for games that are hard to find.
 
+## 🔥 October 2026 wave (via RadiantOpti's viral post)
+
+- Halo: Combat Evolved — https://fqlx.github.io/halo-ce-universal/ — Xbox decomp by Mitchell Hynes, BYO ISO, 128-player MP + split-screen
+- Black Ops 1 Zombies — https://vel.gg/bo1z — all 10 maps + every DLC, no copy needed, turn on hardware acceleration
+- Skate 3 — https://skate.aaddpp.lol/ — by Asher, engine only (BYO converted copy), multiplayer, mobile OK
+- Modern Warfare 2 (OVZ Global Flashpoint) — https://ovz-game-production.up.railway.app/ — by Angelo, PC + mobile
+- Source: https://x.com/RadiantOpti/status/2108068628793082338 (4.8M views) + Tweaktown's 20+ games roundup
+
 
 ## 1. GTA V
 
