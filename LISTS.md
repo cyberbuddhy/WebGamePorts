@@ -56,6 +56,7 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 | 50 | playretrogames.online GameCube | https://playretrogames.online/category/gamecube | GC library: Melee (151k plays), Sunshine, Double Dash, Wind Waker, SA2 Battle… (site bot-blocks curl; content verified via search) | ready-to-play library | 2026-10-09 |
 | 51 | playretrogames.onl Wii | https://playretrogames.onl/category/nintendo-wii | 23 Wii games playable in browser | ready-to-play library | 2026-10-09 |
 | 52 | Gecko compatibility DB (GC/Wii) | https://gecko.layle.dev/compat | Community playability votes per GC/Wii title (Perfect/Playable…) | compatibility reference | 2026-10-09 |
+| 53 | Wasm Arcade Fan Ports | https://wasmarcade.com/Fan | GTA/Minecraft fan ports, some need your own game files; skipped anything needing a launcher download | fan-port collection | 2026-10-09 |
 
 ## How lists overlap
 

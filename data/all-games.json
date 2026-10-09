@@ -834,7 +834,7 @@
   },
   {
    "title": "Diablo",
-   "play_url": null,
+   "play_url": "https://johnimril.github.io/diablo_web/",
    "repo_url": "https://github.com/d07RiV/diabloweb",
    "lists": [
     "ultimate-474"
@@ -2605,7 +2605,7 @@
   },
   {
    "title": "Quake",
-   "play_url": null,
+   "play_url": "https://q1.pieter.com",
    "repo_url": "https://github.com/GMH-Code/Qwasm",
    "lists": [
     "ultimate-474"
@@ -2613,7 +2613,7 @@
   },
   {
    "title": "Quake 2",
-   "play_url": null,
+   "play_url": "https://q2.pieter.com",
    "repo_url": "https://github.com/GMH-Code/Qwasm2",
    "lists": [
     "ultimate-474"
@@ -2621,7 +2621,7 @@
   },
   {
    "title": "Quake 3",
-   "play_url": null,
+   "play_url": "https://q3.pieter.com",
    "repo_url": "https://github.com/lrusso/Quake3",
    "lists": [
     "ultimate-474"
@@ -3877,7 +3877,7 @@
   },
   {
    "title": "Halo: Combat Evolved",
-   "play_url": "https://fqlx.github.io/halo-ce-universal/",
+   "play_url": "https://mitchellhynes.com/halo",
    "repo_url": "https://github.com/damiantw/halo-ce-web-multiplayer",
    "lists": [
     "webgameports"
@@ -3905,6 +3905,118 @@
    "repo_url": null,
    "lists": [
     "webgameports"
+   ]
+  },
+  {
+   "title": "Moon (Zombies)",
+   "play_url": "https://moon-zombies.pages.dev",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Kino der Toten (Zombies)",
+   "play_url": "https://kino-der-toten.pages.dev",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "BO3 Cheese Cube",
+   "play_url": "https://cheese-cube.pages.dev",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Black Ops 2 (Browser)",
+   "play_url": "https://vibeslops.luckeysystems.com",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Skate Rust",
+   "play_url": "https://global-terror.net",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "CS Surf",
+   "play_url": "https://surfd.net",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Halo CE Mobile",
+   "play_url": "https://hcemobile.com",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "PES 6 Web",
+   "play_url": "https://pes6.optijuegos.net",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "GTA Vice City (joncodeofficial WASM)",
+   "play_url": "https://joncodeofficial.github.io/gta-vice-city-wasm",
+   "repo_url": "https://github.com/joncodeofficial/gta-vice-city-wasm",
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Quake 1 (pieter.com MP)",
+   "play_url": "https://q1.pieter.com",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Return to Castle Wolfenstein (pieter.com MP)",
+   "play_url": "https://rtcw.pieter.com",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Unreal Tournament (pieter.com)",
+   "play_url": "https://ut.pieter.com",
+   "repo_url": null,
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Half-Life (pixelsuft)",
+   "play_url": "https://pixelsuft.github.io/hl/",
+   "repo_url": "https://github.com/pixelsuft/hl",
+   "lists": [
+    "user-request"
+   ]
+  },
+  {
+   "title": "Hedgewars (WebWars)",
+   "play_url": "https://webwars.link",
+   "repo_url": "https://github.com/apmlabs/webwars",
+   "lists": [
+    "user-request"
    ]
   }
  ]

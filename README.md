@@ -56,7 +56,7 @@ That's it. Saves stay in your browser.
 | 34 | Sonic Mania / 1 / 2 / CD | self-host | `VinMannie/*`, `TWS2401/Sonic-CD-WASM` |
 | 35 | OpenTTD | self-host | `midzer` / OpenTTD |
 | 36 | Inscryption | `wasm.rip/files/inscryption` | `reeyuki` |
-| 37 | Quake 1 / 2 | self-host | `GMH-Code/Qwasm` |
+| 37 | Quake 1 / 2 | https://q1.pieter.com + https://q2.pieter.com (MP) / self-host | `GMH-Code/Qwasm` |
 | 38 | Doom 1 / 2 | https://playdoom.ossy.dev/ | `GMH-Code/Dwasm`, `UstymUkhman/webDOOM` |
 | 39 | OpenXcom | self-host | `midzer/OpenXcom` |
 
@@ -83,6 +83,7 @@ Other sites that track browser ports (same simplified list as on the [Consoles &
 - [Ported2Browser](https://ported2browser.com/) — hosted builds index
 - [Open Awesome Emscripten](https://open-awesome.com/stacks/emscripten) — open-source builds
 - [wasm.ltd](https://revc.wasm.ltd) — preservation ports
+- [Wasm Arcade Fan Ports](https://wasmarcade.com/Fan) — GTA/Minecraft fan ports (some need your own files)
 - [DOS abandonware hubs](https://archive.org/details/softwarelibrary_msdos_games) — 1000s via Internet Archive
 - [genizy/web-port-list](https://github.com/genizy/web-port-list) — full list + credits
 - [RadiantOpti viral wave (Oct 2026)](https://x.com/RadiantOpti/status/2108068628793082338) — Skate 3, BO1 Zombies, Halo, MW2 in browser
