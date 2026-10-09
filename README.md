@@ -82,6 +82,15 @@ Other sites that track browser ports (same simplified list as on the webpage):
 - [DOS abandonware hubs](https://archive.org/details/softwarelibrary_msdos_games) — 1000s via Internet Archive
 - [genizy/web-port-list](https://github.com/genizy/web-port-list) — full list + credits
 
+## Retro consoles — where to play in the browser
+
+- NES / SNES / GB / GBC / GBA / Genesis: [EmuBrowser](https://emubrowser.com/), [EmuVault](https://emuvault.net/), [RetroPlayland](https://retroplayland.com/), [Afterplay](https://afterplay.io/), [RetroAssembly](https://retroassembly.com/), [Webretro](https://binbashbanana.github.io/webretro/), [Joe Heyming hub](https://joeheyming.github.io/emulator/)
+- N64: same hubs above + [RetroArch Web Player](https://web.libretro.com/)
+- PS1: same hubs + [PS1 hub](https://joeheyming.github.io/emulator/ps1/) + [Internet Archive Console Living Room](https://archive.org/details/consolelivingroom)
+- PS2: only an experiment — [Play!.js](https://playjs.purei.org/)
+- GameCube: no native browser option yet (Afterplay lists it as coming-soon cloud)
+- Tech behind most of them: [EmulatorJS](https://emulatorjs.com) (libretro cores → WASM). Bring your own ROMs; saves stay local unless noted.
+
 ## Add a game
 
 1. Run `/scrapgames` (it finds and checks new ports for you).

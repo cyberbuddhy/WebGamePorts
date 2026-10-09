@@ -23,6 +23,20 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 | 17 | Open Awesome Emscripten | https://open-awesome.com/stacks/emscripten — wipeout-rewrite, BananaBread, etc. | open-source built with Emscripten | Emscripten | 2026-10-09 |
 | 18 | DOS / abandonware browser sites | https://bestdosgames.com/ https://dosgamesarchive.com/ https://archive.org/details/softwarelibrary_msdos_games https://www.myabandonware.com/ etc. | 1000s DOS playable via DOSBox-WASM | DOSBox-WASM | 2026-10-09 |
 | 19 | wasm.ltd preservation initiative | https://revc.wasm.ltd (origami-ltd/wasm-revc) — Vice City + Dino Crisis via PROTON+WINE→WASM | preservation, BYO files, shared streaming layer | WASM + WebGPU/WebGL2 | 2026-10-09 |
+| 20 | EmulatorJS (the tech base) | https://emulatorjs.com / https://github.com/EmulatorJS/EmulatorJS — libretro cores → WASM; N64/PS1 yes, PS2/GameCube no (no JIT/SIMD in WASM) | emulation tech, self-host | WASM cores | 2026-10-09 |
+| 21 | Joe Heyming retro hub | https://joeheyming.github.io/emulator/ (+/ps1/) — NES→PS1/N64, BYO ROM, public-domain collection, no ads | hub, BYO ROM | EmulatorJS | 2026-10-09 |
+| 22 | EmuBrowser | https://emubrowser.com/ — instant SNES/NES/Genesis/PS1/N64/GBA, gamepad+mobile | instant library | browser emu | 2026-10-09 |
+| 23 | EmuVault | https://emuvault.net/ — GBA/SNES/NES/Genesis/PS1/N64, click-and-play | instant library | browser emu | 2026-10-09 |
+| 24 | RetroPlayland | https://retroplayland.com/ — 14 platforms incl. N64, instant play | instant library | WASM emu | 2026-10-09 |
+| 25 | Afterplay | https://afterplay.io/ — GB/GBC/GBA/SNES/N64/PS1 in-tab, cloud saves; GC/Wii/Xbox listed as coming-soon cloud | hub + cloud ($5/mo for cloud) | WASM + streaming | 2026-10-09 |
+| 26 | RetroAssembly | https://retroassembly.com/ (+/demo) — browser game cabinet, Drive-synced saves, self-hostable | cabinet, BYO ROM | WASM | 2026-10-09 |
+| 27 | Webretro | https://binbashbanana.github.io/webretro/ — single static page, drop ROM, play offline once cached | minimal frontend | JS/WASM cores | 2026-10-09 |
+| 28 | webrcade | https://www.webrcade.com — browser retro frontend (EmulatorJS-based) | frontend | browser emu | 2026-10-09 |
+| 29 | Internet Archive Console Living Room | https://archive.org/details/consolelivingroom — curated public-domain ROMs, WASM (Emularity) | curated, legal | WASM | 2026-10-09 |
+| 30 | Fetchcade | https://github.com/jgbrwn/fetchcade — search Archive → play in browser via Koin.js/Nostalgist.js | launcher tool | browser emu | 2026-10-09 |
+| 31 | RetroArch Web Player (official) | https://web.libretro.com/ — RetroArch in browser, 40+ cores, BYO content | official, BYO ROM | Emscripten | 2026-10-09 |
+| 32 | Play!.js (PS2 experiment) | https://playjs.purei.org/ — PS2 emulator in browser, experimental, few games boot | experiment | WASM | 2026-10-09 |
+| 33 | BrowserTools emulator | https://browser-tools.net/tools/emulator — NES/SNES/GBA, fully local, BYO ROM | minimal, BYO ROM | EmulatorJS | 2026-10-09 |
 
 ## How lists overlap
 
@@ -30,5 +44,6 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 - #14 #15 are the only editorial lists that already include HL2 + Simpsons H&R + RA2 + UT as direct links — use them as seed for `/scrapgames`.
 - #18 is DOSBox-WASM, not native-engine WASM — track separately (different tech).
 - #19 is newest (preservation-first, shared base: streaming asset layer + sync worker + SAB file bridge).
+- #20–33 are retro *console emulation* hubs (EmulatorJS/libretro cores → WASM), not engine ports: PS1/N64 play well (#21–27, #29, #31); GameCube has no native browser option (Afterplay lists it as coming-soon cloud); PS2 is one experiment (#32) — WASM lacks JIT/SIMD for these systems.
 
 Add new lists via PR updating this file + `data/games.json` `in_lists[]`.
