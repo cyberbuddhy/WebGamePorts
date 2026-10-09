@@ -6,7 +6,7 @@ subtask: true
 
 # /scrapgames — WebGamePorts scraper
 
-Goal: find NEW playable WebAssembly browser game ports (playgta5.com-class: real engine compiled to WASM, runs locally, not cloud streaming) that are NOT already in `LISTS.md` or `data/games.json` / `GAMES_EXTRA.md`, then append them with proof.
+Goal: find NEW playable WebAssembly browser game ports (full-engine ports: real engine compiled to WASM, runs locally, not cloud streaming) that are NOT already in `LISTS.md` or `data/games.json` / `GAMES_EXTRA.md`, then append them with proof.
 
 ## 0. Load context
 
@@ -23,7 +23,7 @@ Run ALL of these, 2025-2026 biased, current year 2026:
 4. `Reddit r/WebGames OR r/Emulation wasm browser port playable`
 5. `itch.io OR gn-math OR wasm.rip OR webport.ing new web port`
 6. `slqnt OR genizy OR web-ports OR midzer OR Virtastic OR wasm.ltd new port`
-7. Re-check known movers: `playgta5.com mirror`, `hl2.slqnt.dev update`, `shar-wasm update`, `gunz.sigr.io update`, `Generals-WebAssembly update`, `openmw-web update`
+7. Re-check known movers: `GTA V browser mirror`, `hl2.slqnt.dev update`, `shar-wasm update`, `gunz.sigr.io update`, `Generals-WebAssembly update`, `openmw-web update`
 
 For each candidate, fetch the Play URL + repo README. Extract:
 
@@ -36,7 +36,7 @@ For each candidate, fetch the Play URL + repo README. Extract:
 
 ## 2. Verify (reject if fail)
 
-- Play URL returns 200 + serves `*.wasm`/`*.js`/`*.data` (or boots game canvas). Note if Cloudflare 1014 / DMCA / offline like playgta5.
+- Play URL returns 200 + serves `*.wasm`/`*.js`/`*.data` (or boots game canvas). Note if domain is parked / DMCA'd / offline.
 - Repo builds or has prebuilt release + build docs (emsdk version pinned?). Reject pure JS remakes, Unity asset flips with no engine port, cloud-streaming sites (GeForce Now etc), fake "play" pages.
 - Check against ALL lists in `LISTS.md` — fetch Ultimate README + genizy/web-ports + midzer.de/games + wasm.rip if needed. Only keep if Play+repo combo is genuinely new. If partial (e.g. Ultimate has repo but no Play URL, or vice versa), mark `in_lists: ["ultimate-partial-..."]` and still add with missing piece.
 
@@ -51,7 +51,7 @@ For each candidate, fetch the Play URL + repo README. Extract:
 
 - Added: N games (title — play_url — why new)
 - New lists: N (or none)
-- Dead/changed: any tracked Play URLs now offline (e.g. playgta5 clones)
+- Dead/changed: any tracked Play URLs now offline (e.g. taken-down mirrors)
 - Files changed: `data/games.json`, `GAMES_EXTRA.md`, `LISTS.md` (if applicable)
 - Next scrape suggestions (queries that had signal)
 

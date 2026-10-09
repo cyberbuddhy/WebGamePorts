@@ -1,1 +1,163 @@
-{"games": [{"engine": "RAGE (leaked source)", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": "streamed (19.7GB mirror, not in repo)", "notes": "wasm64 75 threads, D3D11 48-opcode ring to WebGPU, 4808 WGSL. Taken down Oct 6-8 2026.", "play_url": "https://playgta5.com (offline; see web.archive.org/web/20261006055917/https://playgta5.com/)", "repo_url": "https://github.com/shadany7824/playgta5 (frontend only)", "status": "taken-down", "tech": "wasm64 + WebGPU + io_worker + AudioWorklet", "title": "GTA V"}, {"engine": "Source (leak fork + ToGLES)", "in_lists": ["ultimate-partial-demo-only", "sigmonsays", "null53bits"], "last_verified": "2026-10-09", "needs_own_files": false, "notes": "Full campaign + eps, console, IDBFS saves, 100+ FPS. Needs steam_legacy assets.", "play_url": "https://hl2.slqnt.dev", "repo_url": "based on weliveinhell portal webport + nillerusr", "status": "live", "tech": "Emscripten + GLES-to-WebGL2 + per-map .data chunks", "title": "Half-Life 2"}, {"engine": "RenderWare / PC leak (2021)", "in_lists": ["quenq-directory", "null53bits"], "last_verified": "2026-10-09", "needs_own_files": false, "notes": "Native res, on-demand fetch, Xbox extras, H264 FMV overlay.", "play_url": "https://shar-wasm.cjoseph.workers.dev/?skipmovie=", "repo_url": "unknown (see HN item?id=47783061)", "status": "live", "tech": "WASM + WebGL", "title": "Simpsons: Hit & Run"}, {"engine": "MTarget / Direct3D9 (2003)", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": false, "notes": "Server compiled to WASM in Worker + postMessage. <10s boot.", "play_url": "https://gunz.sigr.io/", "repo_url": "https://github.com/LostMyCode/d3d9-webgl (translation layer)", "status": "live", "tech": "D3D9-to-WebGL + FMOD-to-WebAudio + Win32-msg bridge", "title": "GunZ: The Duel"}, {"engine": "SAGE (2003, EA GPL via fbraz3/ammaarreshi)", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "Static host, SW-injected COOP/COEP, MQTT signaling + WebRTC MP.", "play_url": "self-host web/dist", "repo_url": "https://github.com/caiiiycuk/Generals-WebAssembly", "status": "repo-live", "tech": "Emscripten + d3d8webgl D3D8-to-WebGL2 + OPFS + Brotli GAXD", "title": "C&C Generals: Zero Hour"}, {"engine": "OpenMW", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "MP up to 32 experimental, admin dashboard 1.2.0. Requires Chrome 133+ MEMORY64.", "play_url": "https://morrowind.virtastic.app", "repo_url": "https://github.com/Virtastic/openmw-web", "status": "live", "tech": "WASM + WebGL2 + File System Access", "title": "Morrowind"}, {"engine": "JA2 Stracciatella v0.22.1", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "AudioWorklet, SIMD blitters, IDBFS. Desktop Chrome only.", "play_url": "https://ja2.virtastic.app", "repo_url": "https://github.com/Virtastic/ja2-web", "status": "live", "tech": "Emscripten + pthreads + FS Access", "title": "Jagged Alliance 2"}, {"engine": "reVC decompilation", "in_lists": ["ultimate-partial-different-repo"], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "Shared wasm.ltd base also runs Dino Crisis via PROTON+WINE to WASM.", "play_url": "https://revc.wasm.ltd", "repo_url": "https://github.com/origami-ltd/wasm-revc", "status": "live", "tech": "Emscripten + WebGL2 + streaming + SAB file bridge", "title": "GTA: Vice City (reVC Web)"}, {"engine": "ioquake3", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "Host-is-server P2P, 60+ maps, 330MB SW cache.", "play_url": "https://thelongestyard.link/q3a-demo/ (demo; MP via self-host)", "repo_url": "https://github.com/JWally/web-quaker", "status": "live", "tech": "Emscripten + WebRTC DataChannels + REST signaling", "title": "Quake 3 Arena (WebRTC MP)"}, {"engine": "Blitz3D via blitz3d-ng LLVM", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": false, "notes": "Unmodified .bb source, full facility playable.", "play_url": "https://q8j-dev.github.io/scpcb-web-port/", "repo_url": "https://github.com/q8j-dev/scpcb-web-port", "status": "live", "tech": "Emscripten + custom WebGPU backend", "title": "SCP: Containment Breach"}, {"engine": "Arx Libertatis", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": true, "notes": "150MB IDBFS demo auto-fetch. Desktop playable, mobile loads only.", "play_url": "demo in repo", "repo_url": "https://github.com/gabrielcuvillier/arxwasm", "status": "demo-live", "tech": "Emscripten + Regal GL-to-GLES2 + WebGL", "title": "Arx Fatalis"}, {"engine": "UZDoom / GZDoom g4.11.3", "in_lists": [], "last_verified": "2026-10-09", "needs_own_files": false, "notes": "Brutal Doom v22 159MB loads. JSPI (no Asyncify). Worker+OffscreenCanvas.", "play_url": "https://uzdoom.bootnet.io/", "repo_url": "https://github.com/abootnet/uzdoom-wasm + https://github.com/mungus43/tomb-engine", "status": "live", "tech": "WebGL2 + OpenAL-to-WebAudio + IDBFS drag-drop", "title": "GZDoom / Brutal Doom in browser"}], "meta": {"last_scrape": "2026-10-09", "lists_tracked": 19, "source": "WebGamePorts /scrapgames v1", "total_extra_not_in_any_list": 12}}
+{
+  "games": [
+    {
+      "engine": "RAGE (leaked source)",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": "streamed (19.7GB mirror, not in repo)",
+      "notes": "Offline since Oct 2026; frontend archived on GitHub (code only, no game data).",
+      "play_url": "https://playgta5.com (offline; see web.archive.org/web/20261006055917/https://playgta5.com/)",
+      "repo_url": "https://github.com/shadany7824/playgta5 (frontend only)",
+      "status": "taken-down",
+      "tech": "WASM + WebGPU",
+      "title": "GTA V"
+    },
+    {
+      "engine": "Source (leak fork + ToGLES)",
+      "in_lists": [
+        "ultimate-partial-demo-only",
+        "sigmonsays",
+        "null53bits"
+      ],
+      "last_verified": "2026-10-09",
+      "needs_own_files": false,
+      "notes": "Full campaign + eps, console, IDBFS saves, 100+ FPS. Needs steam_legacy assets.",
+      "play_url": "https://hl2.slqnt.dev",
+      "repo_url": "based on weliveinhell portal webport + nillerusr",
+      "status": "live",
+      "tech": "Emscripten + GLES-to-WebGL2 + per-map .data chunks",
+      "title": "Half-Life 2"
+    },
+    {
+      "engine": "reVC decompilation",
+      "in_lists": [
+        "ultimate-partial-different-repo"
+      ],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "Shared wasm.ltd base also runs Dino Crisis via PROTON+WINE to WASM.",
+      "play_url": "https://revc.wasm.ltd",
+      "repo_url": "https://github.com/origami-ltd/wasm-revc",
+      "status": "live",
+      "tech": "Emscripten + WebGL2 + streaming + SAB file bridge",
+      "title": "GTA: Vice City (reVC Web)"
+    },
+    {
+      "engine": "RenderWare / PC leak (2021)",
+      "in_lists": [
+        "quenq-directory",
+        "null53bits"
+      ],
+      "last_verified": "2026-10-09",
+      "needs_own_files": false,
+      "notes": "Native res, on-demand fetch, Xbox extras, H264 FMV overlay.",
+      "play_url": "https://shar-wasm.cjoseph.workers.dev/?skipmovie=",
+      "repo_url": "unknown (see HN item?id=47783061)",
+      "status": "live",
+      "tech": "WASM + WebGL",
+      "title": "Simpsons: Hit & Run"
+    },
+    {
+      "engine": "OpenMW",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "MP up to 32 experimental, admin dashboard 1.2.0. Requires Chrome 133+ MEMORY64.",
+      "play_url": "https://morrowind.virtastic.app",
+      "repo_url": "https://github.com/Virtastic/openmw-web",
+      "status": "live",
+      "tech": "WASM + WebGL2 + File System Access",
+      "title": "Morrowind"
+    },
+    {
+      "engine": "ioquake3",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "Host-is-server P2P, 60+ maps, 330MB SW cache.",
+      "play_url": "https://thelongestyard.link/q3a-demo/ (demo; MP via self-host)",
+      "repo_url": "https://github.com/JWally/web-quaker",
+      "status": "live",
+      "tech": "Emscripten + WebRTC DataChannels + REST signaling",
+      "title": "Quake 3 Arena (WebRTC MP)"
+    },
+    {
+      "engine": "Blitz3D via blitz3d-ng LLVM",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": false,
+      "notes": "Unmodified .bb source, full facility playable.",
+      "play_url": "https://q8j-dev.github.io/scpcb-web-port/",
+      "repo_url": "https://github.com/q8j-dev/scpcb-web-port",
+      "status": "live",
+      "tech": "Emscripten + custom WebGPU backend",
+      "title": "SCP: Containment Breach"
+    },
+    {
+      "engine": "JA2 Stracciatella v0.22.1",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "AudioWorklet, SIMD blitters, IDBFS. Desktop Chrome only.",
+      "play_url": "https://ja2.virtastic.app",
+      "repo_url": "https://github.com/Virtastic/ja2-web",
+      "status": "live",
+      "tech": "Emscripten + pthreads + FS Access",
+      "title": "Jagged Alliance 2"
+    },
+    {
+      "engine": "SAGE (2003, EA GPL via fbraz3/ammaarreshi)",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "Static host, SW-injected COOP/COEP, MQTT signaling + WebRTC MP.",
+      "play_url": "self-host web/dist",
+      "repo_url": "https://github.com/caiiiycuk/Generals-WebAssembly",
+      "status": "repo-live",
+      "tech": "Emscripten + d3d8webgl D3D8-to-WebGL2 + OPFS + Brotli GAXD",
+      "title": "C&C Generals: Zero Hour"
+    },
+    {
+      "engine": "UZDoom / GZDoom g4.11.3",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": false,
+      "notes": "Brutal Doom v22 159MB loads. JSPI (no Asyncify). Worker+OffscreenCanvas.",
+      "play_url": "https://uzdoom.bootnet.io/",
+      "repo_url": "https://github.com/abootnet/uzdoom-wasm + https://github.com/mungus43/tomb-engine",
+      "status": "live",
+      "tech": "WebGL2 + OpenAL-to-WebAudio + IDBFS drag-drop",
+      "title": "GZDoom / Brutal Doom in browser"
+    },
+    {
+      "engine": "Arx Libertatis",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": true,
+      "notes": "150MB IDBFS demo auto-fetch. Desktop playable, mobile loads only.",
+      "play_url": "demo in repo",
+      "repo_url": "https://github.com/gabrielcuvillier/arxwasm",
+      "status": "demo-live",
+      "tech": "Emscripten + Regal GL-to-GLES2 + WebGL",
+      "title": "Arx Fatalis"
+    },
+    {
+      "engine": "MTarget / Direct3D9 (2003)",
+      "in_lists": [],
+      "last_verified": "2026-10-09",
+      "needs_own_files": false,
+      "notes": "Server compiled to WASM in Worker + postMessage. <10s boot.",
+      "play_url": "https://gunz.sigr.io/",
+      "repo_url": "https://github.com/LostMyCode/d3d9-webgl (translation layer)",
+      "status": "live",
+      "tech": "D3D9-to-WebGL + FMOD-to-WebAudio + Win32-msg bridge",
+      "title": "GunZ: The Duel"
+    }
+  ],
+  "meta": {
+    "last_scrape": "2026-10-09",
+    "lists_tracked": 19,
+    "source": "WebGamePorts /scrapgames v1",
+    "total_extra_not_in_any_list": 12
+  }
+}
