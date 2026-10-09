@@ -2,7 +2,7 @@
 
 The portal to real games on the web. Full PC & console classics that run in your browser — click a link and play.
 
-🌐 **Prefer a webpage?** Open `index.html` in this repo — same games with pictures, search, sort and filters, plus the full unified list below.
+🌐 **Prefer a webpage?** Browse it live: https://cyberbuddhy.github.io/WebGamePorts/ — same games with pictures, search, sort and filters, plus the full unified list below.
 
 ## Every game — one unified list
 
