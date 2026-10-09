@@ -64,7 +64,7 @@ Notes and extra details on the hard-to-find ones: see `GAMES_EXTRA.md`.
 
 ## Game lists
 
-Other sites that track browser ports (same simplified list as on the webpage):
+Other sites that track browser ports (same simplified list as on the [Consoles & Lists page](lists.html)):
 
 - [Ultimate Catalog (474 games)](https://github.com/Carter54git/Ultimate-Catalog-Of-Web-Game-Ports) — biggest catalog, 206 playable
 - [genizy/web-ports](https://github.com/genizy/web-ports) — 100+ full-game ports
@@ -102,6 +102,8 @@ Ready-to-play libraries (open a game page, press Play, it boots in the tab). BYO
 - PS2: experiment only — [Play!.js](https://playjs.purei.org/); BYO-ISO frontend: [Last Emulator PS2](https://last-emulator.com/emulators/ps2) (PCSX2 core, cloud saves)
 - Wii (BYO ISO): [RetroArch Web Player](https://web.libretro.com/) (Dolphin core) + [Netcade](https://promethean-games.github.io/Netcade/)
 - GameCube — no general browser emu (WASM lacks JIT/SIMD for it). What actually runs: [Animal Crossing Online](https://animalcrossingonline.com/) (full GC→WASM port, BYO disc, cloud saves) + [Monkey Ball Online](https://monkeyball-online.pages.dev/) (SMB1/2 in browser) + [RetroArch Dolphin core](https://web.libretro.com/) (BYO ISO) + [Afterplay](https://afterplay.io/) (cloud coming-soon) + [Netcade](https://promethean-games.github.io/Netcade/) (BYO frontend)
+- GameCube games online (per-game pages that boot): [KhoGameHub GC](https://khogamehub.com/retro/gamecube-0635.html) (Melee, Sunshine, Double Dash… + netplay) + [Vizzed GameCube](https://www.vizzed.com/play/GameCube) + [playretrogames.online GC](https://playretrogames.online/category/gamecube) — check [Gecko compat DB](https://gecko.layle.dev/compat) for what boots
+- Wii games online: [playretrogames.onl Wii](https://playretrogames.onl/category/nintendo-wii) (23 games) + [Gecko compat DB](https://gecko.layle.dev/compat) + Dolphin-core frontends above
 - Tech behind most hubs: [EmulatorJS](https://emulatorjs.com) (libretro cores → WASM). N64/PS1 play well; GameCube/Wii/PS2 need the exceptions above.
 
 ## Add a game

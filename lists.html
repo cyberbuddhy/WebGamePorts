@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebGamePorts — Consoles &amp; Lists</title>
+<style>
+  :root { --bg:#12141a; --card:#1c1f27; --text:#e8eaf0; --muted:#9aa0ae; --acc:#5ad1ff; --green:#4ade80; --yellow:#fbbf24; --red:#f87171; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { padding:28px 20px 10px; text-align:center; }
+  header h1 { margin:0 0 6px; font-size:30px; }
+  header p { margin:0; color:var(--muted); }
+  header .stats { margin-top:10px; font-size:13px; color:var(--acc); }
+  .card { transition:transform .15s ease, border-color .15s ease; }
+  .card:hover { transform:translateY(-3px); border-color:var(--acc); }
+  .badge.b-new { background:rgba(90,209,255,.18); color:var(--acc); margin-left:6px; }
+  .sub { font-size:12px; color:var(--muted); }
+  .bar { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; padding:16px 20px; position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid #262a35; }
+  .bar input, .bar select { padding:9px 12px; border-radius:8px; border:1px solid #333; background:var(--card); color:var(--text); font-size:14px; }
+  .bar input { min-width:220px; }
+  nav.top { display:flex; gap:10px; justify-content:center; align-items:center; padding:12px 20px; border-bottom:1px solid #262a35; flex-wrap:wrap; }
+  nav.top .brand { font-weight:800; margin-right:8px; }
+  nav.top a.tab { padding:8px 16px; border-radius:20px; border:1px solid #333; background:var(--card); color:var(--text); text-decoration:none; font-size:14px; font-weight:600; }
+  nav.top a.tab.on { border-color:var(--acc); color:var(--acc); }
+  .chips { display:flex; gap:8px; justify-content:center; padding:12px 20px 0; flex-wrap:wrap; }
+  .chips button { padding:7px 14px; border-radius:20px; border:1px solid #333; background:var(--card); color:var(--text); cursor:pointer; font-size:13px; }
+  .chips button.on { border-color:var(--acc); color:var(--acc); }
+  .count { text-align:center; color:var(--muted); font-size:13px; padding:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; padding:16px 20px 30px; max-width:1200px; margin:0 auto; }
+  .card { background:var(--card); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid #262a35; }
+  .card img { width:100%; aspect-ratio:616/353; object-fit:cover; display:block; background:#262a35; }
+  .card .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card h3 { margin:0; font-size:16px; }
+  .badge { font-size:11px; padding:3px 9px; border-radius:12px; display:inline-block; width:fit-content; }
+  .b-play { background:rgba(74,222,128,.15); color:var(--green); }
+  .b-self { background:rgba(251,191,36,.15); color:var(--yellow); }
+  .b-off { background:rgba(248,113,113,.15); color:var(--red); }
+  .row { display:flex; gap:8px; margin-top:auto; }
+  .row a { flex:1; text-align:center; padding:8px; border-radius:8px; font-size:13px; text-decoration:none; font-weight:600; }
+  .go { background:var(--acc); color:#06222e; }
+  .go.dis { background:#333; color:var(--muted); pointer-events:none; }
+  .src { background:#2a2e39; color:var(--text); }
+  section.lists { max-width:1200px; margin:0 auto; padding:0 20px 40px; }
+  section.lists h2 { font-size:20px; }
+  section.lists ul { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:8px; }
+  section.lists li { background:var(--card); border:1px solid #262a35; border-radius:8px; padding:10px 12px; font-size:14px; }
+  section.lists a { color:var(--acc); text-decoration:none; font-weight:600; }
+  section.lists span { color:var(--muted); font-size:12px; display:block; }
+  footer { text-align:center; color:var(--muted); font-size:12px; padding:0 20px 30px; }
+  footer a { color:var(--acc); }
+</style>
+</head>
+<body>
+<nav class="top"><span class="brand">🎮 WebGamePorts</span><a class="tab" href="index.html">Games</a><a class="tab on" href="lists.html">Consoles &amp; Lists</a></nav>
+<header>
+  <h1>🕹 Consoles &amp; Lists</h1>
+  <p>Every retro console library and every tracked game list. The playable-games grid lives on the <a href="index.html" style="color:var(--acc)">Games page</a>.</p>
+  <p class="stats" id="stats"></p>
+</header>
+
+<section class="lists">
+  <h2>🕹 Retro consoles — where to play</h2>
+  <ul>
+    <li>NES / SNES<br><span><a href="https://emubrowser.com/" target="_blank" rel="noopener">EmuBrowser</a> · <a href="https://emuvault.net/" target="_blank" rel="noopener">EmuVault</a> · <a href="https://retroplayland.com/" target="_blank" rel="noopener">RetroPlayland</a> · <a href="https://afterplay.io/" target="_blank" rel="noopener">Afterplay</a> · <a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a> (NES 767, SNES 660) · <a href="https://classicemu.com/" target="_blank" rel="noopener">ClassicEmu</a> · <a href="https://oldgames.games/" target="_blank" rel="noopener">OldGames.Games</a> · <a href="https://www.playf2p.com/" target="_blank" rel="noopener">PlayF2P</a></span></li>
+    <li>GB / GBC / GBA<br><span>Same hubs + Afterplay in-tab + cloud saves · GBA: 2574 on <a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a>, 103 on <a href="https://emuvault.net/" target="_blank" rel="noopener">EmuVault</a></span></li>
+    <li>Genesis / Master System / Game Gear<br><span><a href="https://emubrowser.com/" target="_blank" rel="noopener">EmuBrowser</a> · <a href="https://emuvault.net/" target="_blank" rel="noopener">EmuVault</a> · <a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a> (Genesis 557) · <a href="https://www.playf2p.com/" target="_blank" rel="noopener">PlayF2P</a></span></li>
+    <li>Nintendo 64<br><span><a href="https://pastplay.net/console/nintendo-64" target="_blank" rel="noopener">PastPlay</a> (994) · <a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a> (481) · <a href="https://www.vizzed.com/play-n64" target="_blank" rel="noopener">Vizzed N64</a> (600+) · <a href="https://www.classicemu.com/platform/n64.html" target="_blank" rel="noopener">ClassicEmu N64</a> (188) · <a href="https://emulatorgamer.com/platforms/n64" target="_blank" rel="noopener">EmulatorGamer</a> (193) · <a href="https://afterplay.io/emulator/n64" target="_blank" rel="noopener">Afterplay N64</a> · <a href="https://web.libretro.com/" target="_blank" rel="noopener">RetroArch Web</a> · <a href="https://last-emulator.com/emulators/n64" target="_blank" rel="noopener">Last Emulator</a> (BYO)</span></li>
+    <li>PlayStation 1<br><span>Same N64 hubs + <a href="https://joeheyming.github.io/emulator/ps1/" target="_blank" rel="noopener">PS1 hub</a> · <a href="https://archive.org/details/consolelivingroom" target="_blank" rel="noopener">Archive Living Room</a> · 1049 on <a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a></span></li>
+    <li>Nintendo DS<br><span><a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a> (811) · <a href="https://emuvault.net/" target="_blank" rel="noopener">EmuVault</a> (123) · <a href="https://classicemu.com/" target="_blank" rel="noopener">ClassicEmu</a> (147) · <a href="https://oldgames.games/" target="_blank" rel="noopener">OldGames.Games</a> · <a href="https://retrogames.blog/en" target="_blank" rel="noopener">retrogames.blog</a></span></li>
+    <li>Saturn / Dreamcast<br><span><a href="https://www.vizzed.com/play-ss/" target="_blank" rel="noopener">Vizzed Saturn</a> (1200+) · <a href="https://www.vizzed.com/play-dc" target="_blank" rel="noopener">Vizzed Dreamcast</a> (800+) · <a href="https://last-emulator.com/emulators/dreamcast" target="_blank" rel="noopener">Last Emulator DC</a> (BYO)</span></li>
+    <li>Arcade / Neo Geo / Atari / DOS<br><span><a href="https://freeplaymode.com/" target="_blank" rel="noopener">Free Play Mode</a> (Arcade 1896) · <a href="https://www.vizzed.com/playonlinegames/index.php" target="_blank" rel="noopener">Vizzed RGR</a> (40k, 50+ systems) · <a href="https://archive.org/details/consolelivingroom" target="_blank" rel="noopener">Archive Living Room</a></span></li>
+    <li>PlayStation 2<br><span>Experiment only: <a href="https://playjs.purei.org/" target="_blank" rel="noopener">Play!.js</a> · BYO-ISO: <a href="https://last-emulator.com/emulators/ps2" target="_blank" rel="noopener">Last Emulator PS2</a></span></li>
+    <li>Wii (BYO ISO)<br><span><a href="https://web.libretro.com/" target="_blank" rel="noopener">RetroArch Dolphin core</a> · <a href="https://promethean-games.github.io/Netcade/" target="_blank" rel="noopener">Netcade</a> · <a href="https://playretrogames.onl/category/nintendo-wii" target="_blank" rel="noopener">playretrogames.onl Wii</a> (23 games) · <a href="https://gecko.layle.dev/compat" target="_blank" rel="noopener">Gecko compat DB</a></span></li>
+    <li>GameCube<br><span>No general browser emu. Runs: <a href="https://animalcrossingonline.com/" target="_blank" rel="noopener">Animal Crossing Online</a> (WASM port, BYO disc) · <a href="https://monkeyball-online.pages.dev/" target="_blank" rel="noopener">Monkey Ball Online</a> (SMB1/2) · <a href="https://web.libretro.com/" target="_blank" rel="noopener">RetroArch Dolphin core</a> (BYO) · <a href="https://khogamehub.com/retro/gamecube-0635.html" target="_blank" rel="noopener">KhoGameHub GC games</a> · <a href="https://www.vizzed.com/play/GameCube" target="_blank" rel="noopener">Vizzed GC</a> · <a href="https://playretrogames.online/category/gamecube" target="_blank" rel="noopener">playretrogames.online GC</a> · Afterplay cloud (coming soon)</span></li>
+  </ul>
+  <p class="count">Bring your own ROMs unless noted. Tech behind most hubs: EmulatorJS (libretro cores → WASM).</p>
+</section>
+
+<section class="lists">
+  <h2>🎮 GameCube games online</h2>
+  <ul>
+    <li>Game libraries (click a game, it boots)<br><span><a href="https://khogamehub.com/retro/gamecube-0635.html" target="_blank" rel="noopener">KhoGameHub GC</a> (Melee, Sunshine, Double Dash, Wind Waker… Play now + netplay/PWA) · <a href="https://www.vizzed.com/play/GameCube" target="_blank" rel="noopener">Vizzed GameCube</a> (plugin) · <a href="https://playretrogames.online/category/gamecube" target="_blank" rel="noopener">playretrogames.online GC</a> (Melee 151k plays, Sunshine, Double Dash)</span></li>
+    <li>Real GameCube→browser ports (no emu needed)<br><span><a href="https://animalcrossingonline.com/" target="_blank" rel="noopener">Animal Crossing Online</a> (full game, BYO disc, cloud saves) · <a href="https://monkeyball-online.pages.dev/" target="_blank" rel="noopener">Monkey Ball Online</a> (SMB1/2 + widescreen)</span></li>
+    <li>Bring-your-own-ISO frontends<br><span><a href="https://web.libretro.com/" target="_blank" rel="noopener">RetroArch Dolphin core</a> · <a href="https://promethean-games.github.io/Netcade/" target="_blank" rel="noopener">Netcade</a> · <a href="https://gecko.layle.dev/compat" target="_blank" rel="noopener">Gecko compat DB</a> (what actually boots)</span></li>
+  </ul>
+  <p class="count">No general GameCube-in-browser emu exists (WASM lacks JIT/SIMD) — the libraries above stream or use per-game builds; the two ports are native.</p>
+</section>
+
+<section class="lists">
+  <h2>🎮 Wii games online</h2>
+  <ul>
+    <li>Wii library (click a game, it boots)<br><span><a href="https://playretrogames.onl/category/nintendo-wii" target="_blank" rel="noopener">playretrogames.onl Wii</a> (23 games) · <a href="https://gecko.layle.dev/compat" target="_blank" rel="noopener">Gecko compat DB</a> (community playability votes)</span></li>
+    <li>Bring-your-own-ISO frontends<br><span><a href="https://web.libretro.com/" target="_blank" rel="noopener">RetroArch Dolphin core</a> · <a href="https://promethean-games.github.io/Netcade/" target="_blank" rel="noopener">Netcade</a></span></li>
+  </ul>
+  <p class="count">Same story as GameCube: no general Wii-in-browser emu — use the library or a Dolphin-core frontend with your own ISO.</p>
+</section>
+
+<section class="lists">
+  <h2>📚 Game lists</h2>
+  <ul id="lists"></ul>
+</section>
+
+<footer>
+  Images: Steam capsules (Valve/Steam CDN), GOG artwork, Wikipedia/Wikimedia covers and GitHub repo previews belong to their publishers.<br>
+  Game files usually not included — bring your own copy. Full data: <a href="https://github.com/cyberbuddhy/WebGamePorts">github.com/cyberbuddhy/WebGamePorts</a>
+</footer>
+
+<script>
+// NOTE: LISTS data mirrors the array in index.html (kept for the stats count).
+// lists.html renders it statically below; index.html only uses its length.
+const LISTS = [
+ ["Ultimate Catalog (474 games)","https://github.com/Carter54git/Ultimate-Catalog-Of-Web-Game-Ports","Biggest catalog, 206 playable"],
+ ["genizy/web-ports","https://github.com/genizy/web-ports","100+ full-game ports"],
+ ["web-ports org","https://github.com/web-ports","One repo per game"],
+ ["midzer.de/games","https://midzer.de/games","60+ Emscripten ports"],
+ ["wasm.rip","https://wasm.rip/","Porting collective"],
+ ["webport.ing","https://webport.ing/","Indie port team"],
+ ["quenq directory","https://quenq.com/directory/","Vice City, Simpsons…"],
+ ["dos.zone","https://dos.zone","2000+ DOS games in browser"],
+ ["gn-math","https://gn-math.dev/","School-friendly ports host"],
+ ["retrogamescenter.ru","https://retrogamescenter.ru/","Russian ports hub"],
+ ["RetroPlay","https://github.com/MahanKenway/RetroPlay","Curated retro hub"],
+ ["webassemblygames.com","https://www.webassemblygames.com/","WASM games + dev guides"],
+ ["Browser-games HN list","https://sigmonsays.github.io/browser-games.html","Big-title list"],
+ ["null.53bits ports","https://null.53bits.co.uk/page/in-browser-game-ports","Editorial list"],
+ ["Ported2Browser","https://ported2browser.com/","Hosted builds index"],
+ ["Open Awesome Emscripten","https://open-awesome.com/stacks/emscripten","Open-source builds"],
+ ["wasm.ltd","https://revc.wasm.ltd","Preservation ports"],
+ ["DOS abandonware hubs","https://archive.org/details/softwarelibrary_msdos_games","1000s via Internet Archive"],
+ ["genizy/web-port-list","https://github.com/genizy/web-port-list","Full list + credits"],
+ ["EmulatorJS (tech base)","https://emulatorjs.com","Libretro cores to WASM"],
+ ["Joe Heyming retro hub","https://joeheyming.github.io/emulator/","NES to PS1/N64, no ads"],
+ ["EmuBrowser","https://emubrowser.com/","Instant SNES/PS1/N64/GBA"],
+ ["EmuVault","https://emuvault.net/","Click-and-play retro"],
+ ["RetroPlayland","https://retroplayland.com/","14 platforms, instant"],
+ ["Afterplay","https://afterplay.io/","In-tab + cloud saves"],
+ ["RetroAssembly","https://retroassembly.com/","Browser cabinet, Drive sync"],
+ ["Webretro","https://binbashbanana.github.io/webretro/","Single-page emulator"],
+ ["webrcade","https://www.webrcade.com/","Browser retro frontend"],
+ ["IA Console Living Room","https://archive.org/details/consolelivingroom","Curated legal ROMs"],
+ ["Fetchcade","https://github.com/jgbrwn/fetchcade","Archive search to play"],
+ ["RetroArch Web Player","https://web.libretro.com/","Official, 40+ cores"],
+ ["Play!.js (PS2 test)","https://playjs.purei.org/","PS2 experiment"],
+  ["BrowserTools emulator","https://browser-tools.net/tools/emulator","NES/SNES/GBA, local"],
+  ["PastPlay (N64 994)","https://pastplay.net/console/nintendo-64","994 N64 in browser"],
+  ["ClassicEmu (2602, 23 systems)","https://classicemu.com/","SNES 334, N64 188, DS 147"],
+  ["Free Play Mode","https://freeplaymode.com/","NES 767, SNES 660, N64 481, PS1 1049, GBA 2574, DS 811"],
+  ["OldGames.Games","https://oldgames.games/","1196 games, 14 platforms, multiplayer rooms"],
+  ["PlayF2P","https://www.playf2p.com/","NES/SNES/Genesis/GB/GBA/N64/PS1/TG16, no account"],
+  ["Vizzed RGR (40k, 50+ systems)","https://www.vizzed.com/playonlinegames/index.php","N64 600+, DC 800+, Saturn 1200+"],
+  ["EmulatorGamer N64 (193)","https://emulatorgamer.com/platforms/n64","193 N64, browser player"],
+  ["Last Emulator (N64/PS2/DC)","https://last-emulator.com/emulators/n64","BYO ROM, PCSX2/Mupen cores, cloud saves"],
+  ["Animal Crossing Online (GC WASM)","https://animalcrossingonline.com/","Full GC GameCube port, BYO disc"],
+  ["Monkey Ball Online (GC)","https://monkeyball-online.pages.dev/","SMB1/2 in browser"],
+  ["Netcade (BYO + netplay)","https://promethean-games.github.io/Netcade/","N64/SNES/Genesis/GC/Wii, 4-player online"],
+  ["retrogames.blog","https://retrogames.blog/en","GBA/NES/SNES/PS1/N64/Genesis, no download"],
+  ["retrogames.onl directory","https://www.retrogames.onl/p/play-retro-games-online.html","PS1/Saturn/NES/SNES/N64/NDS pages"],
+  ["KhoGameHub GameCube","https://khogamehub.com/retro/gamecube-0635.html","GC library, Play now + netplay/PWA"],
+  ["Vizzed GameCube","https://www.vizzed.com/play/GameCube","GC games in browser (plugin)"],
+  ["playretrogames.online GameCube","https://playretrogames.online/category/gamecube","Melee, Sunshine, Double Dash, Wind Waker…"],
+  ["playretrogames.onl Wii (23 games)","https://playretrogames.onl/category/nintendo-wii","23 Wii games in browser"],
+  ["Gecko compat DB (GC/Wii)","https://gecko.layle.dev/compat","Community GC/Wii playability votes"],
+ ["RadiantOpti viral wave (Oct 2026)","https://x.com/RadiantOpti/status/2108068628793082338","Skate 3, BO1Z, Halo, MW2 in browser"]
+];
+document.getElementById("lists").innerHTML = LISTS.map(([n,u,d])=>`<li><a href="${u}" target="_blank" rel="noopener">${n}</a><span>${d}</span></li>`).join("");
+document.getElementById("stats").textContent = `${LISTS.length} lists · NES–Wii + PS1/PS2 covered`;
+</script>
+</body>
+</html>

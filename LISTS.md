@@ -51,6 +51,11 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 | 45 | Netcade (multi-console BYO + netplay) | https://promethean-games.github.io/Netcade/ | N64/SNES/Genesis (+GC/Wii declared), drop-ROM frontend, 4-player online host/guest | BYO frontend + netplay | 2026-10-09 |
 | 46 | retrogames.blog library | https://retrogames.blog/en | GBA/NES/SNES/PS1/N64/Genesis/Arcade + DS, no download, Chrome recommended | ready-to-play library | 2026-10-09 |
 | 47 | retrogames.onl directory | https://www.retrogames.onl/p/play-retro-games-online.html | PS1/PSX, Mega Drive, Saturn, NES, SNES, N64, NDS per-system pages | directory of ready-to-play pages | 2026-10-09 |
+| 48 | KhoGameHub GameCube | https://khogamehub.com/retro/gamecube-0635.html | GC game library: Sunshine, Melee, Double Dash, Wind Waker…, Play-now buttons + netplay/PWA | ready-to-play library | 2026-10-09 |
+| 49 | Vizzed GameCube | https://www.vizzed.com/play/GameCube | GameCube games in browser via RGR (plugin/Java) | ready-to-play library | 2026-10-09 |
+| 50 | playretrogames.online GameCube | https://playretrogames.online/category/gamecube | GC library: Melee (151k plays), Sunshine, Double Dash, Wind Waker, SA2 Battle… (site bot-blocks curl; content verified via search) | ready-to-play library | 2026-10-09 |
+| 51 | playretrogames.onl Wii | https://playretrogames.onl/category/nintendo-wii | 23 Wii games playable in browser | ready-to-play library | 2026-10-09 |
+| 52 | Gecko compatibility DB (GC/Wii) | https://gecko.layle.dev/compat | Community playability votes per GC/Wii title (Perfect/Playable…) | compatibility reference | 2026-10-09 |
 
 ## How lists overlap
 
@@ -61,5 +66,6 @@ All known catalogs/hubs tracking WebAssembly browser game ports. `/scrapgames` m
 - #20–33 are retro *console emulation* hubs (EmulatorJS/libretro cores → WASM), not engine ports: PS1/N64 play well (#21–27, #29, #31); GameCube has no native browser option (Afterplay lists it as coming-soon cloud); PS2 is one experiment (#32) — WASM lacks JIT/SIMD for these systems.
 - #35–42 + #46–47 are ready-to-play console *libraries* (per-system game pages, press Play): N64 (PastPlay 994, Vizzed 600+, Free Play Mode 481, ClassicEmu 188, EmulatorGamer 193), PS1 (Free Play Mode 1049), GBA (Free Play Mode 2574), DS (Free Play Mode 811), Saturn (Vizzed 1200+), Dreamcast (Vizzed 800+), Arcade (Free Play Mode 1896). PS2/DC via Last Emulator are BYO-ISO frontends (PCSX2 etc.), not bundled libraries.
 - #43–44 are the only true GameCube-in-browser engine ports (Animal Crossing Online, Monkey Ball Online — decomp → WASM, BYO disc where noted). #45 (Netcade) + RetroArch Dolphin core (#31) are BYO-ISO GameCube/Wii frontends, not bundled libraries.
+- #48–50 are GameCube *game* libraries (per-game pages that boot: KhoGameHub, Vizzed GC, playretrogames.online GC). #51 is the Wii game library (playretrogames.onl, 23 titles). #52 (Gecko DB) is the community compatibility reference for what GC/Wii titles actually boot.
 
 Add new lists via PR updating this file + `data/games.json` `in_lists[]`.
